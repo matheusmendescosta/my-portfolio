@@ -1,0 +1,21 @@
+{
+  "Page": {
+    "title": "Olá mundo!",
+    "description": "E aí! Eu sou o Matheus, programador nas horas vagas... e nas horas não vagas também. Tenho um caso sério com TypeScript e ultimamente ando flertando com Python – acho que está ficando sério.\nNo meu blog, compartilho umas ideias, perrengues e conquistas da vida de dev. Se curtiu a vibe, cola lá pra trocar uma ideia! 😄"
+  },
+  "components": {
+    "pages": {
+      "blog": {
+        "title": "wip"
+      }
+    },
+    "ui": {
+      "footer": {
+        "licensed": "Licensed MIT",
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+      },
+      "navbar": {}
+    }
+  }
+}

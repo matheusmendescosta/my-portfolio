@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 function ArrowIcon() {
   return (
     <svg
@@ -16,6 +18,7 @@ function ArrowIcon() {
 }
 
 export default function Footer() {
+  const t = useTranslations("components.ui.footer");
   return (
     <footer className="mb-16">
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
@@ -27,7 +30,7 @@ export default function Footer() {
             href="https://github.com/matheusmendescosta"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">Github</p>
+            <p className="ml-2 h-7">{t("github")}</p>
           </a>
         </li>
         <li>
@@ -38,12 +41,12 @@ export default function Footer() {
             href="https://www.linkedin.com/in/matheusmendescosta/"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">Linkedin</p>
+            <p className="ml-2 h-7">{t("linkedin")}</p>
           </a>
         </li>
       </ul>
       <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} MIT Licensed
+        © {new Date().getFullYear()} {t("licensed")}
       </p>
     </footer>
   );

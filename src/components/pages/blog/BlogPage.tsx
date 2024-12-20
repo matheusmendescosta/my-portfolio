@@ -1,3 +1,7 @@
+import { useTranslations } from "next-intl";
+
 export const BlogPage = () => {
-  return <h1>WiP</h1>;
+  const t = useTranslations("components.pages.blog");
+  
+  return <h1>{t("title")}</h1>;
 };
