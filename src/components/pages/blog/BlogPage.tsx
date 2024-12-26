@@ -1,7 +1,7 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 
 export const BlogPage = () => {
-  const t = useTranslations("components.pages.blog");
-  
-  return <h1>{t("title")}</h1>;
+  const t = useTranslations('components.pages.blog');
+
+  return <h1>{t('title')}</h1>;
 };
