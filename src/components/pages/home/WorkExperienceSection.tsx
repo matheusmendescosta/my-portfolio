@@ -104,7 +104,6 @@ function WorkExperienceSection() {
   return (
     <>
       <h2 className="mb-4 text-sm font-bold text-gray-200">{t('title')}</h2>
-
       <div>
         {experiences.map((experience, index) => (
           <div key={index} className="mb-9 flex">
