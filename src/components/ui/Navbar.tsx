@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Languages } from 'lucide-react';
 
 const navItems = {
   '/': {
@@ -26,6 +27,9 @@ export function Navbar() {
                 </Link>
               );
             })}
+            <div className="text-bg-center absolute right-0 px-2 py-2">
+              <Languages />
+            </div>
           </div>
         </nav>
       </div>

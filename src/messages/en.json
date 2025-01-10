@@ -1,13 +1,32 @@
 {
-  "Page": {
-    "title": "Hello world!",
-    "description": "Yo! I’m Matheus, a coder during my free time… and, well, all the other times too (coding is basically my jam). I’m tight with TypeScript, and lately, I’ve been low-key vibing with Python – feels like it might be turning into a full-on thing.\nOn my blog, I keep it real with dev stories, wins, and the occasional “what the heck just happened?” moments. If you’re down for the ride, swing by and check it out! ✌️"
-  },
   "components": {
     "pages": {
+      "home": {
+        "about_section": {
+          "title": "About me",
+          "description": "Yo! I’m Matheus, a coder during my free time… and, well, all the other times too (coding is basically my jam). I’m tight with TypeScript, and lately, I’ve been low-key vibing with Python – feels like it might be turning into a full-on thing.\nOn my blog, I keep it real with dev stories, wins, and the occasional “what the heck just happened?” moments. If you’re down for the ride, swing by and check it out! ✌️"
+        },
+        "header_section": {
+          "name": "Matheus Mendes",
+          "occupation": "Full Stack developer"
+        },
+        "home_section": {},
+        "projects_section": {},
+        "work_experience_section": {
+          "title": "Work experience"
+        }
+      },
       "blog": {
         "title": "wip"
       }
+    },
+    "ui": {
+      "footer": {
+        "licensed": "Licensed MIT",
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+      },
+      "navbar": {}
     }
   }
 }

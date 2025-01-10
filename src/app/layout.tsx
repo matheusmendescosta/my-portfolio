@@ -32,7 +32,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} mx-4 mt-8 max-w-xl bg-black text-white antialiased lg:mx-auto`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} mx-4 mt-8 max-w-md bg-black text-white antialiased lg:mx-auto`}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}

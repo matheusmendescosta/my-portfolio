@@ -1,10 +1,21 @@
 {
-  "Page": {
-    "title": "Olá mundo!",
-    "description": "E aí! Eu sou o Matheus, programador nas horas vagas... e nas horas não vagas também. Tenho um caso sério com TypeScript e ultimamente ando flertando com Python – acho que está ficando sério.\nNo meu blog, compartilho umas ideias, perrengues e conquistas da vida de dev. Se curtiu a vibe, cola lá pra trocar uma ideia! 😄"
-  },
   "components": {
     "pages": {
+      "home": {
+        "about_section": {
+          "title": "Sobre mim",
+          "description": "E aí! Eu sou o Matheus, programador nas horas vagas... e nas horas não vagas também. Tenho um caso sério com TypeScript e ultimamente ando flertando com Python – acho que está ficando sério.\nNo meu blog, compartilho umas ideias, perrengues e conquistas da vida de dev. Se curtiu a vibe, cola lá pra trocar uma ideia! 😄"
+        },
+        "header_section": {
+          "name": "Matheus Mendes",
+          "occupation": "Desenvolvedor Fullstack"
+        },
+        "home_section": {},
+        "projects_section": {},
+        "work_experience_section": {
+          "title": "Experiência profissional"
+        }
+      },
       "blog": {
         "title": "wip"
       }
