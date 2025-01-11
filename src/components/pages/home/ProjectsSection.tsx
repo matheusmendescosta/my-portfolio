@@ -6,7 +6,7 @@ const projects = [
     title: 'Sistema de Indicação Madre',
     description: 'Sistema de indicação da faculdade madre tereza',
     status: '2023 - Pausado',
-    demo: '#',
+    demo: 'https://sim.grupomadretereza.com.br/pt-BR/auth/signin',
     img: '/projects/sim.png',
     source: 'https://github.com/codecodedev/sim-api',
     technologies: {
