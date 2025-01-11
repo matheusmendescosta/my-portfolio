@@ -1,6 +1,25 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import React from 'react';
+
+const projects = [
+  {
+    title: 'Sistema de Indicação Madre',
+    description: 'Sistema de indicação da faculdade madre tereza',
+    status: '2023 - Pausado',
+    demo: '#',
+    img: '/projects/sim.png',
+    source: 'https://github.com/codecodedev/sim-api',
+    technologies: {
+      typescript: 'typescript.png',
+      express: 'express.png',
+      mysql: 'mysql.png',
+      github: 'octacat.png',
+      react: 'reactjs.png',
+      next: 'nextjs.png',
+      tailwind: 'tailwindcss.png',
+    },
+  },
+];
 
 function ArrowIcon() {
   return (
@@ -16,25 +35,58 @@ function ArrowIcon() {
 function ProjectsSection() {
   const t = useTranslations('components.pages.home.projects_section');
   return (
-    <div>
-      <h2 className="mb-4 text-sm font-bold text-gray-200">{t('title')}</h2>
-      <div>
-        <div className="mb-9 flex justify-between">
-          <div className="ml-4 mt-6">
-            <Image src="/images/profile.png" width={100} height={100} alt="company logo" className="rounded-md" />
+    <>
+      <h2 className="mb-4 text-lg font-bold text-gray-200">{t('title')}</h2>
+      <>
+        {projects.map((project, index) => (
+          <div key={index} className="mb-9 flex">
+            <div className="mr-4">
+              <Image src={project.img} width={100} height={100} alt="company logo" className="rounded-md" />
+            </div>
+            <div>
+              <div>
+                <h3 className="text-md font-semibold text-gray-100">{project.title}</h3>
+              </div>
+              <div className="flex gap-4">
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-sm text-gray-400 hover:underline"
+                >
+                  see demo
+                  <ArrowIcon />
+                </a>
+                <a
+                  href={project.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-sm text-gray-400 hover:underline"
+                >
+                  see code
+                  <ArrowIcon />
+                </a>
+              </div>
+              <p className="text-sm text-gray-400">{project.status}</p>
+              <p className="text-sm text-gray-500">{project.description}</p>
+              <div className="mt-2 flex gap-2">
+                {Object.entries(project.technologies).map(([tech, imgSrc]) => (
+                  <Image
+                    key={tech}
+                    src={`/technologies/${imgSrc}`}
+                    width={22}
+                    height={22}
+                    alt={tech}
+                    title={tech}
+                    className="transform rounded-sm transition-transform duration-200 ease-in-out hover:scale-150"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold text-gray-100">cargo</h3>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm text-gray-400 hover:underline">
-              link
-              <ArrowIcon />
-            </a>
-            <p className="text-sm text-gray-400">data</p>
-            <p className="text-sm text-gray-500">descrição</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        ))}
+      </>
+    </>
   );
 }
 

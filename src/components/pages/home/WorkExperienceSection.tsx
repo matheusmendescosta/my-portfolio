@@ -103,7 +103,7 @@ function WorkExperienceSection() {
 
   return (
     <>
-      <h2 className="mb-4 text-sm font-bold text-gray-200">{t('title')}</h2>
+      <h2 className="mb-4 text-lg font-bold text-gray-200">{t('title')}</h2>
       <div>
         {experiences.map((experience, index) => (
           <div key={index} className="mb-9 flex">
@@ -111,7 +111,7 @@ function WorkExperienceSection() {
               <Image src={experience.img} width={50} height={50} alt="company logo" className="rounded-md" />
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-100">{t(`experiences.${index}.role`)}</h3>
+              <h3 className="text-md font-semibold text-gray-100">{t(`experiences.${index}.role`)}</h3>
               <a
                 href={experience.url}
                 target="_blank"
@@ -129,11 +129,11 @@ function WorkExperienceSection() {
                     <Image
                       key={tech}
                       src={`/technologies/${imgSrc}`}
-                      width={20}
-                      height={20}
+                      width={22}
+                      height={22}
                       alt={tech}
                       title={tech}
-                      className="rounded-sm"
+                      className="transform rounded-sm transition-transform duration-200 ease-in-out hover:scale-150"
                     />
                   ))}
                 </div>
