@@ -1,10 +1,55 @@
 {
-  "Page": {
-    "title": "Olá mundo!",
-    "description": "E aí! Eu sou o Matheus, programador nas horas vagas... e nas horas não vagas também. Tenho um caso sério com TypeScript e ultimamente ando flertando com Python – acho que está ficando sério.\nNo meu blog, compartilho umas ideias, perrengues e conquistas da vida de dev. Se curtiu a vibe, cola lá pra trocar uma ideia! 😄"
-  },
   "components": {
     "pages": {
+      "home": {
+        "about_section": {
+          "title": "Sobre mim",
+          "description": "E aí! Eu sou o Matheus, programador nas horas vagas... e nas horas não vagas também. Tenho um caso sério com TypeScript e ultimamente ando flertando com Python – acho que está ficando sério.\nNo meu blog, compartilho umas ideias, perrengues e conquistas da vida de dev. Se curtiu a vibe, cola lá pra trocar uma ideia! 😄"
+        },
+        "header_section": {
+          "name": "Matheus Mendes",
+          "occupation": "Desenvolvedor Fullstack"
+        },
+        "home_section": {},
+        "projects_section": {
+          "title": "Projetos paralelos"
+        },
+        "work_experience_section": {
+          "title": "Experiência profissional",
+          "experiences": [
+            {
+              "company": "EvoTalks",
+              "role": "Desenvolvedor de Integração",
+              "date": "nov de 2024 - o momento · 3 meses",
+              "description": "integrando alguns sistemas"
+            },
+            {
+              "company": "RBR Digital",
+              "role": "Desenvolvedor Fullstack",
+              "date": "jun de 2024 - ago de 2024 · 3 meses",
+              "description": "ajudando pessoas com um sistema de saúde inovador"
+            },
+            {
+              "company": "OrçaFacio",
+              "role": "Desenvolvedor Fullstack",
+              "date": "out de 2023 - mai de 2024 · 8 meses",
+              "description": "construindo o mundo (literalmente)"
+            },
+            {
+              "company": "TNP",
+              "role": "Desenvolvedor Frontend",
+              "date": "jul de 2023 - out de 2023 · 4 meses",
+              "description": "sistema de cashback"
+            },
+            {
+              "company": "Prosas",
+              "role": "Desenvolvedor Frontend",
+              "date": "mar de 2022 - fev de 2023 · 1 ano",
+              "description": "construindo um mundo melhor"
+            }
+          ]
+        }
+      },
       "blog": {
         "title": "wip"
       }
