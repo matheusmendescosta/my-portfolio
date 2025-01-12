@@ -47,7 +47,7 @@ function ProjectsSection() {
             </div>
             <div>
               <div>
-                <h3 className="text-md font-semibold text-gray-100">{project.title}</h3>
+                <h3 className="text-md font-semibold text-gray-100">{t(`projects.${index}.title`)}</h3>
               </div>
               <div className="flex gap-4">
                 <a
@@ -56,7 +56,7 @@ function ProjectsSection() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-sm text-gray-400 hover:underline"
                 >
-                  see demo
+                  {t(`projects.${index}.demo`)}
                   <ArrowIcon />
                 </a>
                 <a
@@ -65,12 +65,12 @@ function ProjectsSection() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-sm text-gray-400 hover:underline"
                 >
-                  see code
+                  {t(`projects.${index}.code`)}
                   <ArrowIcon />
                 </a>
               </div>
-              <p className="text-sm text-gray-400">{project.status}</p>
-              <p className="text-sm text-gray-500">{project.description}</p>
+              <p className="text-sm text-gray-400">{t(`projects.${index}.date`)}</p>
+              <p className="text-sm text-gray-500">{t(`projects.${index}.description`)}</p>
               <div className="mt-2 flex gap-2">
                 {Object.entries(project.technologies).map(([tech, imgSrc]) => (
                   <Image

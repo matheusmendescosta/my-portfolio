@@ -4,15 +4,24 @@
       "home": {
         "about_section": {
           "title": "Sobre mim",
-          "description": "E aí! Eu sou o Matheus, programador nas horas vagas... e nas horas não vagas também. Tenho um caso sério com TypeScript e ultimamente ando flertando com Python – acho que está ficando sério.\nNo meu blog, compartilho umas ideias, perrengues e conquistas da vida de dev. Se curtiu a vibe, cola lá pra trocar uma ideia! 😄"
+          "description": "Engenheiro de Computação com MBA em Desenvolvimento Full Stack, com sólida experiência em desenvolvimento Front-End e Back-End. Especialista em criar soluções eficientes e escaláveis, aplicando boas práticas de desenvolvimento e focando em alta performance e qualidade de código."
         },
         "header_section": {
           "name": "Matheus Mendes",
-          "occupation": "Desenvolvedor Fullstack"
+          "occupation": "Desenvolvedor Fullstack Pleno"
         },
         "home_section": {},
         "projects_section": {
-          "title": "Projetos paralelos"
+          "title": "Projetos paralelos",
+          "projects": [
+            {
+              "title": "SIM - Sistema de Indicação",
+              "demo": "Ver demonstração",
+              "code": "Ver código",
+              "date": "2023 - Pausado",
+              "description": "Sistema de indicação da Faculdade Madre Tereza"
+            }
+          ]
         },
         "work_experience_section": {
           "title": "Experiência profissional",
@@ -21,37 +30,38 @@
               "company": "EvoTalks",
               "role": "Desenvolvedor de Integração",
               "date": "nov de 2024 - o momento · 3 meses",
-              "description": "integrando alguns sistemas"
+              "description": "Desenvolvendo integrações entre sistemas"
             },
             {
               "company": "RBR Digital",
               "role": "Desenvolvedor Fullstack",
               "date": "jun de 2024 - ago de 2024 · 3 meses",
-              "description": "ajudando pessoas com um sistema de saúde inovador"
+              "description": "Revolução na saúde dos estados unidos"
             },
             {
               "company": "OrçaFacio",
               "role": "Desenvolvedor Fullstack",
               "date": "out de 2023 - mai de 2024 · 8 meses",
-              "description": "construindo o mundo (literalmente)"
+              "description": "Tecnologia mais usada em obras públicas no Brasil"
             },
             {
               "company": "TNP",
               "role": "Desenvolvedor Frontend",
               "date": "jul de 2023 - out de 2023 · 4 meses",
-              "description": "sistema de cashback"
+              "description": "Solução de pagamento colaborativo inovador"
             },
             {
               "company": "Prosas",
               "role": "Desenvolvedor Frontend",
               "date": "mar de 2022 - fev de 2023 · 1 ano",
-              "description": "construindo um mundo melhor"
+              "description": "Tecnologia a serviço do impacto social"
             }
           ]
         }
       },
       "blog": {
-        "title": "wip"
+        "title": "Página em construção",
+        "subtitle": "Esta página está em construção. Por favor, volte mais tarde"
       }
     },
     "ui": {
@@ -60,7 +70,12 @@
         "github": "GitHub",
         "linkedin": "LinkedIn"
       },
-      "navbar": {}
+      "navbar": {
+        "navItems": {
+          "home": "Inicio",
+          "blog": "Blog"
+        }
+      }
     }
   }
 }
