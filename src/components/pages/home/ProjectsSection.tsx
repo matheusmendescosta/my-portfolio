@@ -49,7 +49,9 @@ function ProjectsSection() {
         {projects.map((project, index) => (
           <div key={index} className="mb-9 flex">
             <div className="mr-4">
-              <Image src={project.img} width={100} height={100} alt="company logo" className="rounded-md" />
+              <motion.div whileHover={{ scale: 1.25 }}>
+                <Image src={project.img} width={100} height={100} alt="company logo" className="rounded-md" />
+              </motion.div>
             </div>
             <div>
               <div>
