@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { Languages } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import LocaleSwitcher from './use-locale-switcher-select';
 
 const navItems = [
   {
@@ -31,9 +31,9 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <div className="text-bg-center absolute right-0 px-2 py-2">
-              <Languages />
-            </div>
+          </div>
+          <div className="ml-auto">
+            <LocaleSwitcher />
           </div>
         </nav>
       </div>

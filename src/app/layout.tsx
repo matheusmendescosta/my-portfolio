@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import LocaleSwitcher from '@/components/ui/use-locale-switcher-select';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

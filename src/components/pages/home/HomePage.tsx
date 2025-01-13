@@ -1,8 +1,7 @@
-import React from 'react';
-import HeaderSection from './HeaderSection';
 import AboutSection from './AboutSection';
-import WorkExperienceSection from './WorkExperienceSection';
+import HeaderSection from './HeaderSection';
 import ProjectsSection from './ProjectsSection';
+import WorkExperienceSection from './WorkExperienceSection';
 
 function HomePage() {
   return (
