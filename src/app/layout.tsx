@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/images/profile.png',
   },
-  title: 'Portfolio of Matheus Mendes',
+  title: 'Portfolio - Matheus Mendes',
   description: 'Portfolio of Matheus Mendes, a software developer based in Brazil.',
 };
 
