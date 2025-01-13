@@ -12,10 +12,12 @@ export default function LocaleSwitcher() {
         {
           value: 'en',
           label: t('en'),
+          img: '/images/usa.png',
         },
         {
           value: 'pt-br',
           label: t('pt-br'),
+          img: '/images/br.png',
         },
       ]}
     />

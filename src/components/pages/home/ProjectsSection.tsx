@@ -1,5 +1,9 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const projects = [
   {
@@ -36,6 +40,8 @@ function ArrowIcon() {
 
 function ProjectsSection() {
   const t = useTranslations('components.pages.home.projects_section');
+  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+
   return (
     <>
       <h2 className="mb-4 text-lg font-bold text-gray-200">{t('title')}</h2>
@@ -73,15 +79,27 @@ function ProjectsSection() {
               <p className="text-sm text-gray-500">{t(`projects.${index}.description`)}</p>
               <div className="mt-2 flex gap-2">
                 {Object.entries(project.technologies).map(([tech, imgSrc]) => (
-                  <Image
+                  <motion.div
                     key={tech}
-                    src={`/technologies/${imgSrc}`}
-                    width={22}
-                    height={22}
-                    alt={tech}
-                    title={tech}
-                    className="transform rounded-sm transition-transform duration-200 ease-in-out hover:scale-150"
-                  />
+                    onMouseEnter={() => setHoveredIcon(`${tech}_${index}`)}
+                    onMouseLeave={() => setHoveredIcon(null)}
+                    initial={{ y: 0 }}
+                    animate={hoveredIcon === `${tech}_${index}` ? { y: [0, -10, 0] } : { y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      repeat: hoveredIcon === `${tech}_${index}` ? Infinity : 0,
+                      repeatType: 'loop',
+                    }}
+                  >
+                    <Image
+                      src={`/technologies/${imgSrc}`}
+                      width={22}
+                      height={22}
+                      alt={tech}
+                      title={tech}
+                      className="transform rounded-sm transition-transform duration-200 ease-in-out hover:scale-150"
+                    />
+                  </motion.div>
                 ))}
               </div>
             </div>
