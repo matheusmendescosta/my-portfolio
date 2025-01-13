@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import LocaleSwitcher from './use-locale-switcher-select';
+import LocaleSwitcher from './LocaleSwitcher';
 
 const navItems = [
   {
@@ -32,7 +32,7 @@ export function Navbar() {
               );
             })}
           </div>
-          <div className="ml-auto">
+          <div className="absolute right-0 float-right">
             <LocaleSwitcher />
           </div>
         </nav>

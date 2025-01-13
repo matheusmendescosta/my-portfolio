@@ -5,7 +5,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import LocaleSwitcher from '@/components/ui/use-locale-switcher-select';
+import LocaleSwitcher from '@/components/ui/LocaleSwitcher';
+import { twJoin } from 'tailwind-merge';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -36,12 +37,18 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} mx-4 mt-8 max-w-md bg-black text-white antialiased lg:mx-auto`}>
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
+      <body
+        className={twJoin(
+          `${geistSans.variable} ${geistMono.variable} flex min-h-screen items-center justify-center bg-black text-white antialiased`
+        )}
+      >
+        <div className="mx-4 mt-8 max-w-md">
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            {children}
+            <Footer />
+          </NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );

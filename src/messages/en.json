@@ -75,6 +75,12 @@
           "home": "Home",
           "blog": "Blog"
         }
+      },
+      "locale_switcher": {
+        "options": {
+          "en": "English",
+          "pt-br": "Portuguese"
+        }
       }
     }
   }
