@@ -5,12 +5,13 @@ import { setUserLocale } from '@/services/locale';
 import * as Select from '@radix-ui/react-select';
 import clsx from 'clsx';
 import { CheckIcon, LanguagesIcon } from 'lucide-react';
+import Image from 'next/image';
 
 import React, { useTransition } from 'react';
 
 type LocaleSwitcherSelectProps = {
   defaultValue: string;
-  items: Array<{ value: string; label: string }>;
+  items: Array<{ value: string; label: string; img: string }>;
 };
 
 const LocaleSwitcherSelect = ({ defaultValue, items }: LocaleSwitcherSelectProps) => {
@@ -40,9 +41,14 @@ const LocaleSwitcherSelect = ({ defaultValue, items }: LocaleSwitcherSelectProps
           <Select.Content align="end" className="min-w-[8rem] overflow-hidden rounded-md bg-white py-1 shadow-md" position="popper">
             <Select.Viewport>
               {items.map((item) => (
-                <Select.Item key={item.value} className="flex cursor-pointer items-center bg-white px-3 py-2 text-base" value={item.value}>
+                <Select.Item
+                  key={item.value}
+                  className="flex cursor-pointer justify-between space-x-1 bg-white px-3 py-2 text-base"
+                  value={item.value}
+                >
                   <div className="mr-2 w-[1rem]">{item.value === defaultValue && <CheckIcon className="h-5 w-5 text-slate-600" />}</div>
                   <span className="text-slate-900">{item.label}</span>
+                  <Image src={item.img} width={25} height={25} alt="company logo" className="rounded-md border" />
                 </Select.Item>
               ))}
             </Select.Viewport>

@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Tutorial from './Onboarding';
 import LocaleSwitcher from './LocaleSwitcher';
 
 const navItems = [
@@ -13,6 +14,14 @@ const navItems = [
   },
 ];
 
+const tutorialSteps = [
+  {
+    title: '🌐 Alterar Idioma',
+    description: 'Personalize sua experiência escolhendo o idioma de sua preferência. Clique no ícone de idioma.',
+    selector: '#changeLanguage',
+    position: 'absolute',
+  },
+];
 export function Navbar() {
   const t = useTranslations('components.ui.navbar');
   return (
@@ -32,11 +41,12 @@ export function Navbar() {
               );
             })}
           </div>
-          <div className="absolute right-0 float-right">
+          <div id="changeLanguage" className="absolute right-0 float-right">
             <LocaleSwitcher />
           </div>
         </nav>
       </div>
+      <Tutorial steps={tutorialSteps} />
     </aside>
   );
 }
