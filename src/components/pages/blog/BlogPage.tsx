@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import PostSection from './posts/PostsSection';
+import PostsPage from './posts/PostsPage';
 import HeaderSection from './HeaderSection';
 
 export const BlogPage = () => {
@@ -8,7 +8,7 @@ export const BlogPage = () => {
   return (
     <>
       <HeaderSection />
-      <PostSection />
+      <PostsPage />
     </>
   );
 };

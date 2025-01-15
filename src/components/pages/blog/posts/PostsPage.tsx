@@ -3,15 +3,17 @@
 import React from 'react';
 import { usePosts } from './use-posts';
 
-const PostsSection = () => {
+const PostsPage = () => {
   const { posts } = usePosts();
 
   return (
     <>
       {posts.map((post, index) => (
         <div key={index} className="mb-4 rounded p-4 shadow-sm">
-          <p className="mb-2 text-lg font-bold">{post.title}</p>
-          <p className="mb-2 text-gray-700">{post.content}</p>
+          <a href={`blog/post/${post.id}`} className="mb-2 text-lg font-bold text-gray-600 hover:underline">
+            {post.title}
+          </a>
+          <p className="mb-2 line-clamp-3 text-gray-700">{post.content}</p>
           <p className="mb-2 text-sm text-gray-500">{post.createdAt}</p>
           <p className="text-sm text-gray-500">❤️ {post._count.likes}</p>
         </div>
@@ -20,4 +22,4 @@ const PostsSection = () => {
   );
 };
 
-export default PostsSection;
+export default PostsPage;

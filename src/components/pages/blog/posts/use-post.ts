@@ -3,11 +3,15 @@
 import { PostDTO } from '@/dto/PostDto';
 import { useCallback, useEffect, useState } from 'react';
 
-export const usePosts = () => {
-  const [posts, setPosts] = useState<PostDTO[]>([]);
+type UsePostProps = {
+  postId: string;
+};
 
-  const loadPosts = useCallback(() => {
-    fetch('http://localhost:3333/api/v1/posts')
+export const usePost = ({ postId }: UsePostProps) => {
+  const [post, setPost] = useState<PostDTO>();
+
+  const loadPost = useCallback(() => {
+    fetch(`http://localhost:3333/api/v1/post/${postId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Fetch fail');
@@ -15,7 +19,7 @@ export const usePosts = () => {
         return response.json();
       })
       .then((data) => {
-        setPosts(data);
+        setPost(data);
       })
       .catch((error) => {
         console.log(error);
@@ -23,8 +27,8 @@ export const usePosts = () => {
   }, []);
 
   useEffect(() => {
-    loadPosts();
-  }, [loadPosts]);
+    loadPost();
+  }, [loadPost]);
 
-  return { posts, setPosts };
+  return { post, setPost };
 };
