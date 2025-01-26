@@ -128,7 +128,7 @@ const OnboardingTutorial = ({ steps }: OnboardingTutorialProps) => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.3 }}
-        className="animation fixed z-50 w-11/12 max-w-md rounded-lg bg-black p-6 shadow-xl"
+        className="animation fixed z-50 w-11/12 max-w-md rounded-lg dark:bg-black p-6 shadow-xl bg-gray-400"
         style={{
           top: `${dialogTop}px`,
           left: `${dialogLeft}px`,
@@ -138,8 +138,8 @@ const OnboardingTutorial = ({ steps }: OnboardingTutorialProps) => {
         }}
       >
         <div>
-          <h2 className="mb-2 text-xl font-semibold text-gray-400">{steps[currentStep].title}</h2>
-          <p className="mb-6 text-gray-300">{steps[currentStep].description}</p>
+          <h2 className="mb-2 text-xl font-semibold dark:text-gray-400">{steps[currentStep].title}</h2>
+          <p className="mb-6 dark:text-gray-300">{steps[currentStep].description}</p>
         </div>
 
         <div className="flex justify-end">
