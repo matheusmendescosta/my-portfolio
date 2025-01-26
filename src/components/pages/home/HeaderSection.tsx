@@ -31,8 +31,8 @@ function HeaderSection() {
         }}
       >
         <div className="ml-4 mt-4 text-left">
-          <p className="text-lg font-bold text-gray-200">{t('name')}</p>
-          <p className="text-md font-semibold text-gray-300">{t('occupation')}</p>
+          <p className="text-lg font-bold text-black dark:text-gray-200">{t('name')}</p>
+          <p className="text-md font-semibold text-black dark:text-gray-300">{t('occupation')}</p>
         </div>
       </motion.div>
     </div>

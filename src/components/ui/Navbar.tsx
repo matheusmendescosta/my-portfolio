@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Tutorial from './Onboarding';
 import LocaleSwitcher from './LocaleSwitcher';
+import DarkMode from './DarkMode';
 
 const navItems = [
   {
@@ -41,8 +42,11 @@ export function Navbar() {
               );
             })}
           </div>
-          <div id="changeLanguage" className="absolute right-0 float-right">
-            <LocaleSwitcher />
+          <div className="absolute right-0 flex space-x-4">
+            <div id="changeLanguage">
+              <LocaleSwitcher />
+            </div>
+            <DarkMode />
           </div>
         </nav>
       </div>
