@@ -109,7 +109,7 @@ function WorkExperienceSection() {
 
   return (
     <>
-      <h2 className="mb-4 text-lg font-bold text-gray-200">{t('title')}</h2>
+      <h2 className="mb-4 text-lg font-bold dark:text-gray-200">{t('title')}</h2>
       <div>
         {experiences.map((experience, index) => (
           <div key={index} className="mb-9 flex">
@@ -119,18 +119,18 @@ function WorkExperienceSection() {
               </motion.div>
             </div>
             <div>
-              <h3 className="text-md font-semibold text-gray-100">{t(`experiences.${index}.role`)}</h3>
+              <h3 className="text-md font-semibold dark:text-gray-100">{t(`experiences.${index}.role`)}</h3>
               <a
                 href={experience.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-gray-400 hover:underline"
+                className="flex items-center gap-1 text-sm dark:text-gray-400 hover:underline"
               >
                 {t(`experiences.${index}.company`)}
                 <ArrowIcon />
               </a>
-              <p className="text-sm text-gray-400">{t(`experiences.${index}.date`)}</p>
-              <p className="text-sm text-gray-500">{t(`experiences.${index}.description`)}</p>
+              <p className="text-sm dark:text-gray-400">{t(`experiences.${index}.date`)}</p>
+              <p className="text-sm dark:text-gray-500">{t(`experiences.${index}.description`)}</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {Object.entries(experience.technologies).map(([tech, imgSrc]) => (
                   <motion.div

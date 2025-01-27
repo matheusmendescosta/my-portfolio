@@ -8,6 +8,7 @@ import { CheckIcon, LanguagesIcon } from 'lucide-react';
 import Image from 'next/image';
 
 import React, { useTransition } from 'react';
+import { twJoin } from 'tailwind-merge';
 
 type LocaleSwitcherSelectProps = {
   defaultValue: string;
@@ -28,13 +29,10 @@ const LocaleSwitcherSelect = ({ defaultValue, items }: LocaleSwitcherSelectProps
     <div className="relative">
       <Select.Root defaultValue={defaultValue} onValueChange={onChange}>
         <Select.Trigger
-          className={clsx(
-            'relative p-2 transition-colors hover:bg-slate-800 focus:outline-none',
-            isPending && 'pointer-events-none opacity-60'
-          )}
+          className={twJoin('relative p-2 transition-colors focus:outline-none', isPending && 'pointer-events-none opacity-60')}
         >
           <Select.Icon>
-            <LanguagesIcon className="h-6 w-6 text-white transition-colors group-hover:text-slate-900" />
+            <LanguagesIcon />
           </Select.Icon>
         </Select.Trigger>
         <Select.Portal>

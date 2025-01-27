@@ -44,7 +44,7 @@ function ProjectsSection() {
 
   return (
     <>
-      <h2 className="mb-4 text-lg font-bold text-gray-200">{t('title')}</h2>
+      <h2 className="mb-4 text-lg font-bold dark:text-gray-200">{t('title')}</h2>
       <>
         {projects.map((project, index) => (
           <div key={index} className="mb-9 flex">
@@ -55,14 +55,14 @@ function ProjectsSection() {
             </div>
             <div>
               <div>
-                <h3 className="text-md font-semibold text-gray-100">{t(`projects.${index}.title`)}</h3>
+                <h3 className="text-md font-semibold dark:dark:text-gray-100">{t(`projects.${index}.title`)}</h3>
               </div>
               <div className="flex gap-4">
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm text-gray-400 hover:underline"
+                  className="flex items-center gap-1 text-sm dark:text-gray-400 hover:underline"
                 >
                   {t(`projects.${index}.demo`)}
                   <ArrowIcon />
@@ -71,14 +71,14 @@ function ProjectsSection() {
                   href={project.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm text-gray-400 hover:underline"
+                  className="flex items-center gap-1 text-sm dark:text-gray-400 hover:underline"
                 >
                   {t(`projects.${index}.code`)}
                   <ArrowIcon />
                 </a>
               </div>
-              <p className="text-sm text-gray-400">{t(`projects.${index}.date`)}</p>
-              <p className="text-sm text-gray-500">{t(`projects.${index}.description`)}</p>
+              <p className="text-sm dark:text-gray-400">{t(`projects.${index}.date`)}</p>
+              <p className="text-sm dark:text-gray-500">{t(`projects.${index}.description`)}</p>
               <div className="mt-2 flex gap-2">
                 {Object.entries(project.technologies).map(([tech, imgSrc]) => (
                   <motion.div
