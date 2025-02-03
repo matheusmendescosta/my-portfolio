@@ -1,10 +1,10 @@
 'use client';
 
-import { PostDTO } from '@/dto/PostDto';
+import { postsDto } from '@/dto/PostDto';
 import { useCallback, useEffect, useState } from 'react';
 
 export const usePosts = () => {
-  const [posts, setPosts] = useState<PostDTO[]>([]);
+  const [posts, setPosts] = useState<postsDto>();
 
   const loadPosts = useCallback(() => {
     fetch('http://localhost:3333/api/v1/posts')
@@ -14,7 +14,7 @@ export const usePosts = () => {
         }
         return response.json();
       })
-      .then((data) => {
+      .then((data: postsDto) => {
         setPosts(data);
       })
       .catch((error) => {

@@ -5,10 +5,10 @@ import { usePosts } from './use-posts';
 
 const PostsPage = () => {
   const { posts } = usePosts();
-
+  console.log(posts);
   return (
     <>
-      {posts.map((post, index) => (
+      {posts?.posts.map((post, index) => (
         <div key={index} className="mb-4 rounded p-4 shadow-sm">
           <a href={`blog/post/${post.id}`} className="mb-2 text-lg font-bold text-gray-600 hover:underline">
             {post.title}
