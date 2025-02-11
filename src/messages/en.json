@@ -57,6 +57,23 @@
               "description": "Technology at the service of social impact."
             }
           ]
+        },
+        "education_section": {
+          "title": "Education",
+          "education": [
+            {
+              "school": "Meta College",
+              "course": "Computer Engineering",
+              "date": "jan 2016 - sep 2021",
+              "description": "Bachelor's Degree in Computer Engineering"
+            },
+            {
+              "school": "XP Education College - IGTI",
+              "course": "MBA in Full Stack Development",
+              "date": "Agu 2022 - Jun 2023",
+              "description": "Postgraduate degree lato sensu MBA in Full Stack Development"
+            }
+          ]
         }
       },
       "blog": {
