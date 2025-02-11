@@ -57,6 +57,23 @@
               "description": "Tecnologia a serviço do impacto social"
             }
           ]
+        },
+        "education_section": {
+          "title": "Formação",
+          "education": [
+            {
+              "school": "Faculdade Meta",
+              "course": "Engenharia de computação",
+              "date": "jan 2016 - set 2021",
+              "description": "Curso Superior de Bacharelado em Engenharia de Computação"
+            },
+            {
+              "school": "Faculdade XP Educação - IGTI,",
+              "course": "MBA em Desenvolvimento Full Stack",
+              "date": "Ago 2022 - Jun 2023",
+              "description": "Pós-graduação lato sensu MBA em Desenvolvimento Full Stack"
+            }
+          ]
         }
       },
       "blog": {

@@ -1,6 +1,7 @@
 'use client';
 import { motion, useScroll, useSpring } from 'motion/react';
 import AboutSection from './AboutSection';
+import EducationSection from './EducationSection';
 import HeaderSection from './HeaderSection';
 import ProjectsSection from './ProjectsSection';
 import WorkExperienceSection from './WorkExperienceSection';
@@ -40,6 +41,17 @@ function HomePage() {
         }}
       >
         <AboutSection />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 1.5,
+          duration: 0.3,
+          scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
+        }}
+      >
+        <EducationSection />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
