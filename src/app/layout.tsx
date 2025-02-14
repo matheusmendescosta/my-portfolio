@@ -40,13 +40,8 @@ export default async function RootLayout({
   return (
     <ThemeProvider>
       <CustomDocument locale={locale}>
-        <body
-          className={twJoin(
-            `${geistSans.variable} ${geistMono.variable} flex min-h-screen items-center justify-center`,
-            'antialiased dark:bg-black dark:text-white'
-          )}
-        >
-          <div className="mx-4 mt-8 max-w-md">
+        <body className={twJoin(`${geistSans.variable} ${geistMono.variable} flex flex-col items-center dark:bg-black dark:text-white`)}>
+          <div className="mx-4 mt-8">
             <NextIntlClientProvider messages={messages}>
               <Navbar />
               {children}

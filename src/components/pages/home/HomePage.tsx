@@ -16,7 +16,7 @@ function HomePage() {
   });
 
   return (
-    <>
+    <div className="max-w-md">
       <motion.div
         id="scroll-indicator"
         style={{
@@ -75,7 +75,7 @@ function HomePage() {
       >
         <ProjectsSection />
       </motion.div>
-    </>
+    </div>
   );
 }
 
