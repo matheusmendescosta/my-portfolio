@@ -18,7 +18,7 @@ export const usePosts = () => {
         setPosts(data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("error usePosts",error);
       });
   }, []);
 

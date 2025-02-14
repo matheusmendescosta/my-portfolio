@@ -22,7 +22,7 @@ export const usePost = ({ postId }: UsePostProps) => {
         setPost(data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log('error usePost', error);
       });
   }, []);
 

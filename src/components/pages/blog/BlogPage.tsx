@@ -1,10 +1,7 @@
-import { useTranslations } from 'next-intl';
-import PostsPage from './posts/PostsPage';
 import HeaderSection from './HeaderSection';
+import PostsPage from './PostsPage';
 
 export const BlogPage = () => {
-  const t = useTranslations('components.pages.blog');
-
   return (
     <>
       <HeaderSection />
