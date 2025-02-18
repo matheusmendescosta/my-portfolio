@@ -1,6 +1,10 @@
 {
   "components": {
     "pages": {
+      "blog": {
+        "title": "Meu cerebro",
+        "subtitle": "Uma coletania de tutoriais de mim para mim mesmo"
+      },
       "home": {
         "about_section": {
           "title": "Sobre mim",
@@ -75,15 +79,11 @@
             }
           ]
         }
-      },
-      "blog": {
-        "title": "Página em construção",
-        "subtitle": "Esta página está em construção. Por favor, volte mais tarde"
       }
     },
     "ui": {
       "footer": {
-        "licensed": "Licensed MIT",
+        "create_by": "Criado por Matheus Mendes 🗿",
         "github": "GitHub",
         "linkedin": "LinkedIn"
       },

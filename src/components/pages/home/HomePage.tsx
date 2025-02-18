@@ -16,7 +16,54 @@ function HomePage() {
   });
 
   return (
-    <div className="max-w-md">
+    <>
+      <div className="mx-auto flex max-w-md flex-col items-center">
+        <HeaderSection />
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 1.25,
+            duration: 0.3,
+            scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
+          }}
+        >
+          <AboutSection />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 1.5,
+            duration: 0.3,
+            scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
+          }}
+        >
+          <EducationSection />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 1.5,
+            duration: 0.3,
+            scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
+          }}
+        >
+          <WorkExperienceSection />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 2,
+            duration: 0.3,
+            scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
+          }}
+        >
+          <ProjectsSection />
+        </motion.div>
+      </div>
       <motion.div
         id="scroll-indicator"
         style={{
@@ -30,52 +77,7 @@ function HomePage() {
           backgroundColor: '#A3AABE',
         }}
       />
-      <HeaderSection />
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          delay: 1.25,
-          duration: 0.3,
-          scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
-        }}
-      >
-        <AboutSection />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          delay: 1.5,
-          duration: 0.3,
-          scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
-        }}
-      >
-        <EducationSection />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          delay: 1.5,
-          duration: 0.3,
-          scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
-        }}
-      >
-        <WorkExperienceSection />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          delay: 2,
-          duration: 0.3,
-          scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
-        }}
-      >
-        <ProjectsSection />
-      </motion.div>
-    </div>
+    </>
   );
 }
 

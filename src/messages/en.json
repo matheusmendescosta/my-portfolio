@@ -1,6 +1,10 @@
 {
   "components": {
     "pages": {
+      "blog": {
+        "title": "My brain",
+        "subtitle": "Collection of tutorial for me"
+      },
       "home": {
         "about_section": {
           "title": "About me",
@@ -75,15 +79,11 @@
             }
           ]
         }
-      },
-      "blog": {
-        "title": "Page Under Construction",
-        "subtitle": "This page is under construction. Please come back later"
       }
     },
     "ui": {
       "footer": {
-        "licensed": "Licensed MIT",
+        "create_by": "created by Matheus Mendes 🗿",
         "github": "GitHub",
         "linkedin": "LinkedIn"
       },

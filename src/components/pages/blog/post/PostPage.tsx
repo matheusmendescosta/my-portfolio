@@ -94,19 +94,19 @@ const PostPage = ({ postId }: PostPageProps) => {
     : '';
 
   if (!post) {
-    return <p>Carregando...</p>;
+    return <p>Loading...</p>;
   }
 
   return (
-    <div className="mx-auto max-w-md rounded p-6 shadow">
+    <div className="min-w-full rounded p-6 shadow">
       <h1 className="text-3xl font-bold">{post?.title}</h1>
       <p className="text-gray-500">Slug: {post?.slug}</p>
       <div className="my-2 rounded-lg p-2">
-        <iframe ref={iframeRef} sandbox="allow-scripts allow-same-origin" />
+        <iframe ref={iframeRef} className="w-full" sandbox="allow-scripts allow-same-origin" />
       </div>
       <div className="mt-4 flex flex-col">
-        <p className="text-sm text-gray-500">Publicado em {formattedDateCreateAt}</p>
-        <p className="text-sm text-gray-500">Atualizado em {formattedDateUpdatedAt}</p>
+        <p className="text-sm text-gray-500">publish in {formattedDateCreateAt}</p>
+        <p className="text-sm text-gray-500">actualized in {formattedDateUpdatedAt}</p>
       </div>
       <div className="mt-4">
         <p className="text-gray-700">❤️ {post?._count.likes}</p>
@@ -121,7 +121,7 @@ const PostPage = ({ postId }: PostPageProps) => {
             ))}
           </ul>
         ) : (
-          <p className="text-gray-500">Nenhum comentário disponível.</p>
+          <p className="text-gray-500">No comments available.</p>
         )}
       </div>
     </div>

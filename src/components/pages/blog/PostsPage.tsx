@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { usePosts } from './use-posts';
+import PostSection from './PostSection';
 
 const PostsPage = () => {
   const { posts } = usePosts();
@@ -9,16 +10,19 @@ const PostsPage = () => {
   return (
     <>
       {posts?.posts.map((post, index) => (
-        <div key={index} className="mb-4 rounded p-4 shadow-sm">
-          <a href={`blog/post/${post.id}`} className="mb-2 text-lg font-bold hover:underline dark:text-gray-200">
-            {post.title}
-          </a>
-          <div className="my-4 line-clamp-3 dark:text-gray-300">
-            {post.content.trim() != '' && <div className="mb-4 rounded-sm" dangerouslySetInnerHTML={{ __html: post.content }} />}
-          </div>
-          <p className="mb-2 text-sm dark:text-gray-500">{post.createdAt}</p>
-          <p className="text-sm dark:text-gray-500">❤️ {post._count.likes}</p>
-        </div>
+        <PostSection
+          id={post.id}
+          author={post.author.name}
+          category={post.category.name}
+          title={post.title}
+          slug={post.slug}
+          content={post.content}
+          createdAt={post.createdAt}
+          comments={post.comments.length}
+          likes={post._count.likes}
+          key={index}
+          tags={post.tags.map((tag) => tag.name)}
+        />
       ))}
     </>
   );

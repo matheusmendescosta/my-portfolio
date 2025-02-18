@@ -7,7 +7,7 @@ export const usePosts = () => {
   const [posts, setPosts] = useState<postsDto>();
 
   const loadPosts = useCallback(() => {
-    fetch('http://localhost:3333/api/v1/posts')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/posts`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Fetch fail');
