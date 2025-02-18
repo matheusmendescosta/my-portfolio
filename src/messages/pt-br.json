@@ -2,8 +2,8 @@
   "components": {
     "pages": {
       "blog": {
-        "title": "Meu cerebro",
-        "subtitle": "Uma coletania de tutoriais de mim para mim mesmo"
+        "title": "Meu cérebro",
+        "subtitle": "Uma coletania de tutoriais de mim e outros para mim mesmo"
       },
       "home": {
         "about_section": {
@@ -23,7 +23,7 @@
               "demo": "Ver demonstração",
               "code": "Ver código",
               "date": "2023 - Pausado",
-              "description": "Sistema de indicação da Faculdade Madre Tereza"
+              "description": "Sistema de indicação da Faculdade Madre Tereza - SIM"
             }
           ]
         },
@@ -34,7 +34,7 @@
               "company": "EvoTalks",
               "role": "Desenvolvedor de Integração",
               "date": "nov de 2024 - o momento · 3 meses",
-              "description": "Desenvolvendo integrações entre sistemas"
+              "description": "Desenvolvendo integrações entre sistemas sistemas usando javascript"
             },
             {
               "company": "RBR Digital",
@@ -90,7 +90,7 @@
       "navbar": {
         "navItems": {
           "home": "Inicio",
-          "blog": "Blog"
+          "brain": "cérebro"
         }
       },
       "locale_switcher": {

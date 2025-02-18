@@ -97,12 +97,12 @@ function WorkExperienceSection() {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
 
   return (
-    <>
+    <section>
       <h2 className="mb-4 text-lg font-bold dark:text-gray-200">{t('title')}</h2>
       <div>
         {experiences.map((experience, index) => (
           <div key={index} className="mb-9 flex">
-            <div className="mr-4 mt-6">
+            <div className="mr-4 mt-6 flex-shrink-0">
               <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 1 }}>
                 <Image src={experience.img} width={50} height={50} alt="company logo" className="rounded-md" />
               </motion.div>
@@ -149,7 +149,7 @@ function WorkExperienceSection() {
           </div>
         ))}
       </div>
-    </>
+    </section>
   );
 }
 

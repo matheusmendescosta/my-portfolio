@@ -28,11 +28,11 @@ function EducationSection() {
   const t = useTranslations('components.pages.home.education_section');
 
   return (
-    <>
+    <section>
       <h2 className="mb-4 text-lg font-bold dark:text-gray-200">{t('title')}</h2>
       <div>
         {Education.map((education, index) => (
-          <div key={index} className="4 mb-9 flex min-w-full">
+          <div key={index} className="mb-9 flex min-w-full">
             <div className="mr-4 mt-6">
               <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 1 }}>
                 <Image src={education.img} width={50} height={50} alt="company logo" className="rounded-md" />
@@ -51,12 +51,11 @@ function EducationSection() {
               </a>
               <p className="text-sm dark:text-gray-400">{t(`education.${index}.date`)}</p>
               <p className="text-sm dark:text-gray-500">{t(`education.${index}.description`)}</p>
-              <div className="mt-2 flex flex-wrap gap-2"></div>
             </div>
           </div>
         ))}
       </div>
-    </>
+    </section>
   );
 }
 

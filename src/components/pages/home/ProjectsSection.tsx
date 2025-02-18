@@ -47,7 +47,7 @@ function ProjectsSection() {
       <h2 className="mb-4 text-lg font-bold dark:text-gray-200">{t('title')}</h2>
       <>
         {projects.map((project, index) => (
-          <div key={index} className="mb-9 flex">
+          <div key={index} className="mb-9 flex shrink-0">
             <div className="mr-4">
               <motion.div whileHover={{ scale: 1.25 }}>
                 <Image src={project.img} width={100} height={100} alt="company logo" className="rounded-md" />
@@ -62,7 +62,7 @@ function ProjectsSection() {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm dark:text-gray-400 hover:underline"
+                  className="flex items-center gap-1 text-sm hover:underline dark:text-gray-400"
                 >
                   {t(`projects.${index}.demo`)}
                   <ArrowIcon />
@@ -71,7 +71,7 @@ function ProjectsSection() {
                   href={project.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm dark:text-gray-400 hover:underline"
+                  className="flex items-center gap-1 text-sm hover:underline dark:text-gray-400"
                 >
                   {t(`projects.${index}.code`)}
                   <ArrowIcon />

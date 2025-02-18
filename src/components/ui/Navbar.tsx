@@ -10,8 +10,8 @@ const navItems = [
     name: 'home',
   },
   {
-    path: '/blog',
-    name: 'blog',
+    path: '/brain',
+    name: 'brain',
   },
 ];
 
