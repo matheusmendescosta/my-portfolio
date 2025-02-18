@@ -27,7 +27,7 @@ const tutorialSteps = [
 export function Navbar() {
   const t = useTranslations('components.ui.navbar');
   return (
-    <aside className="mb-16 tracking-tight">
+    <aside className="mb-16 py-2 tracking-tight">
       <div className="lg:sticky lg:top-20">
         <nav className="fade relative flex flex-col items-center px-0 pb-0 md:relative md:overflow-auto" id="nav">
           <div className="flex flex-row space-x-4">

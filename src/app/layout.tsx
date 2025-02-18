@@ -43,7 +43,7 @@ export default async function RootLayout({
         <body className={twJoin(`${geistSans.variable} ${geistMono.variable} dark:bg-black dark:text-white`)}>
           <NextIntlClientProvider messages={messages}>
             <Navbar />
-            {children}
+            <div className="p-2">{children}</div>
             <div className="flex justify-center">
               <Footer />
             </div>
