@@ -69,4 +69,4 @@ export type tagsDto = {
   slug: string;
 }[];
 
-export type authorDto = {}
+export type authorDto = {};

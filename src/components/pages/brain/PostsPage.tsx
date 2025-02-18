@@ -21,6 +21,7 @@ const PostsPage = () => {
           comments={post.comments.length}
           likes={post._count.likes}
           key={index}
+          updateAt={post.updatedAt}
           tags={post.tags.map((tag) => tag.name)}
         />
       ))}
