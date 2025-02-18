@@ -1,7 +1,7 @@
 import HeaderSection from './HeaderSection';
 import PostsPage from './PostsPage';
 
-export const BlogPage = () => {
+export const BrainPage = () => {
   return (
     <>
       <HeaderSection />

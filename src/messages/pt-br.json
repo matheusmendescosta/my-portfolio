@@ -2,8 +2,8 @@
   "components": {
     "pages": {
       "blog": {
-        "title": "Meu cérebro",
-        "subtitle": "Uma coletania de tutoriais de mim e outros para mim mesmo"
+        "title": "Meu cérebro 🧠",
+        "subtitle": "Minha jornada na tecnologia, registrada em tutoriais e anotações para mim (e para quem mais quiser aprender)"
       },
       "home": {
         "about_section": {

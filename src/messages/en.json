@@ -2,8 +2,8 @@
   "components": {
     "pages": {
       "blog": {
-        "title": "My brain",
-        "subtitle": "Collection of tutorial for me"
+        "title": "My brain 🧠",
+        "subtitle": "My journey into technology, recorded in tutorials and notes for myself (and anyone else who wants to learn)"
       },
       "home": {
         "about_section": {
