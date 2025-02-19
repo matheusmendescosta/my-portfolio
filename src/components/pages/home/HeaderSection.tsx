@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import React from 'react';
+import ContactSection from './ContactSection';
 
 function HeaderSection() {
   const t = useTranslations('components.pages.home.header_section');
@@ -19,7 +19,7 @@ function HeaderSection() {
           scale: { type: 'spring', visualDuration: 0.4, bounce: 0.4 },
         }}
       >
-        <Image src="/images/profile.png" width={100} height={100} alt="image profile" className="rounded-full" />
+        <Image src="/images/profile.png" width={100} height={100} alt="image profile" className="rounded-full" priority={true} />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
@@ -33,6 +33,7 @@ function HeaderSection() {
         <div className="ml-4 mt-4 text-left">
           <p className="text-lg font-bold text-black dark:text-gray-200">{t('name')}</p>
           <p className="text-md font-semibold text-black dark:text-gray-300">{t('occupation')}</p>
+          <ContactSection />
         </div>
       </motion.div>
     </div>
