@@ -45,13 +45,13 @@ const ContactSection = () => {
             <Mail size={20} />
           </button>
         </DrawerTrigger>
-        <DrawerContent className="bg-white dark:bg-black">
+        <DrawerContent className="mx-auto flex max-w-md flex-col bg-white dark:bg-black">
           <DrawerHeader>
             <DrawerTitle className="text-black dark:text-white">Enviar E-mail</DrawerTitle>
             <DrawerDescription>Preencha o formulário abaixo para entrar em contato.</DrawerDescription>
           </DrawerHeader>
-          <form className="grid gap-4" onSubmit={handleSubmit}>
-            <div className="mx-4 grid gap-2">
+          <form className="grid gap-3 mx-4" onSubmit={handleSubmit}>
+            <div className="grid gap-3">
               <label htmlFor="email">E-mail</label>
               <input
                 name="email"
@@ -62,7 +62,7 @@ const ContactSection = () => {
                 className="input border p-1 text-black dark:bg-slate-200"
               />
             </div>
-            <div className="mx-4 grid gap-2">
+            <div className="grid gap-3">
               <label htmlFor="name">Nome</label>
               <input
                 name="name"
@@ -73,7 +73,7 @@ const ContactSection = () => {
                 className="input border p-1 text-black dark:bg-slate-200"
               />
             </div>
-            <div className="mx-4 grid gap-2">
+            <div className="grid gap-3">
               <label htmlFor="message">Mensagem</label>
               <textarea
                 name="message"
