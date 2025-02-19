@@ -1,9 +1,24 @@
 {
   "components": {
     "pages": {
-      "blog": {
-        "title": "Meu cérebro 🧠",
-        "subtitle": "Minha jornada na tecnologia, registrada em tutoriais e anotações para mim (e para quem mais quiser aprender)"
+      "brain": {
+        "header_section": {
+          "title": "Meu cérebro 🧠",
+          "subtitle": "Minha jornada na tecnologia, registrada em tutoriais e anotações para mim (e para quem mais quiser aprender)"
+        },
+        "posts_section": {
+          "create_at": "Criado em",
+          "update_at": "Atualizado em",
+          "by": "por"
+        },
+        "post": {
+          "post_page": {
+            "slug": "Identificador",
+            "create_at": "Criado em",
+            "update_at": "Atualizado em",
+            "not_comments": "Nenhum comentário disponível."
+          }
+        }
       },
       "home": {
         "about_section": {

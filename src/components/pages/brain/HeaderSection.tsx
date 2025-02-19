@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 const HeaderSection = () => {
-  const t = useTranslations('components.pages.blog');
+  const t = useTranslations('components.pages.brain.header_section');
   return (
     <div className="min-w-full py-6 dark:text-white">
       <div className="container mx-auto px-10">

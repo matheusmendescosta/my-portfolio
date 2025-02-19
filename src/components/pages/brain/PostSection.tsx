@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { BookHeart, MessageSquareCode, MoveUpRightIcon } from 'lucide-react';
-import { useFormatter } from 'next-intl';
+import { useFormatter, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React from 'react';
 
@@ -20,26 +20,27 @@ type PostsSectionProps = {
 
 const PostSection = ({ id, title, slug, content, createdAt, updateAt, likes, comments, author, category, tags }: PostsSectionProps) => {
   const formatter = useFormatter();
+  const t = useTranslations('components.pages.brain.posts_section');
 
   const formattedDateCreateAt = createdAt
     ? formatter.dateTime(new Date(createdAt), {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    })
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      })
     : '';
   const formattedDateUpdateAt = updateAt
     ? formatter.dateTime(new Date(updateAt), {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    })
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      })
     : '';
   return (
     <Link key={id} href={`brain/post/${id}`}>
@@ -63,10 +64,16 @@ const PostSection = ({ id, title, slug, content, createdAt, updateAt, likes, com
           ))}
         </div>
         <div className="my-2 flex flex-col justify-start py-2">
-          <p className="text-sm dark:text-gray-200">Create at: {formattedDateCreateAt}</p>
-          <p className="text-sm dark:text-gray-200">update at: {formattedDateUpdateAt}</p>
+          <p className="text-sm dark:text-gray-200">
+            {t('create_at')} {formattedDateCreateAt}
+          </p>
+          <p className="text-sm dark:text-gray-200">
+            {t('update_at')} {formattedDateUpdateAt}
+          </p>
         </div>
-        <p className="mb-2 flex justify-start text-sm dark:text-gray-200">By: {author}</p>
+        <p className="mb-2 flex justify-start text-sm dark:text-gray-200">
+          {t('by')} {author}
+        </p>
         <div className="flex justify-start space-x-2 pt-2">
           <div className="flex space-x-2 text-sm dark:text-gray-200">
             <BookHeart /> <span>{likes}</span>

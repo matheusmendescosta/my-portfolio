@@ -1,9 +1,24 @@
 {
   "components": {
     "pages": {
-      "blog": {
-        "title": "My brain 🧠",
-        "subtitle": "My journey into technology, recorded in tutorials and notes for myself (and anyone else who wants to learn)"
+      "brain": {
+        "header_section": {
+          "title": "My brain 🧠",
+          "subtitle": "My journey into technology, recorded in tutorials and notes for myself (and anyone else who wants to learn)"
+        },
+        "posts_section": {
+          "create_at": "Create at",
+          "update_at": "Update at",
+          "by": "by"
+        },
+        "post": {
+          "post_page": {
+            "slug": "Slug",
+            "create_at": "Create at",
+            "update_at": "Update at",
+            "not_comments": "No comments available."
+          }
+        }
       },
       "home": {
         "about_section": {

@@ -3,13 +3,14 @@
 import { useContext, useEffect, useRef } from 'react';
 import { usePost } from './use-post';
 import { ThemeContext } from '@/contexts/ThemeProvider';
-import { useFormatter } from 'next-intl';
+import { useFormatter, useTranslations } from 'next-intl';
 
 type PostPageProps = {
   postId: string;
 };
 
 const PostPage = ({ postId }: PostPageProps) => {
+  const t = useTranslations('components.pages.brain.post.post_page');
   const formatter = useFormatter();
   const { post } = usePost({ postId });
   const theme = useContext(ThemeContext);
@@ -73,24 +74,24 @@ const PostPage = ({ postId }: PostPageProps) => {
 
   const formattedDateCreateAt = post?.createdAt
     ? formatter.dateTime(new Date(post.createdAt), {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
-    })
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      })
     : '';
 
   const formattedDateUpdatedAt = post?.updatedAt
     ? formatter.dateTime(new Date(post.updatedAt), {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
-    })
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      })
     : '';
 
   if (!post) {
@@ -100,13 +101,19 @@ const PostPage = ({ postId }: PostPageProps) => {
   return (
     <div className="min-w-full rounded p-6 shadow">
       <h1 className="text-3xl font-bold">{post?.title}</h1>
-      <p className="text-gray-500">Slug: {post?.slug}</p>
+      <p className="text-gray-500">
+        {t('slug')}: {post?.slug}
+      </p>
       <div className="my-2 rounded-lg p-2">
         <iframe ref={iframeRef} className="w-full" sandbox="allow-scripts allow-same-origin" />
       </div>
       <div className="mt-4 flex flex-col">
-        <p className="text-sm text-gray-500">publish in {formattedDateCreateAt}</p>
-        <p className="text-sm text-gray-500">actualized in {formattedDateUpdatedAt}</p>
+        <p className="text-sm text-gray-500">
+          {t('create_at')} {formattedDateCreateAt}
+        </p>
+        <p className="text-sm text-gray-500">
+          {t('update_at')} {formattedDateUpdatedAt}
+        </p>
       </div>
       <div className="mt-4">
         <p className="text-gray-700">❤️ {post?._count.likes}</p>
@@ -121,7 +128,7 @@ const PostPage = ({ postId }: PostPageProps) => {
             ))}
           </ul>
         ) : (
-          <p className="text-gray-500">No comments available.</p>
+          <p className="text-gray-500">{t('not_comments')}</p>
         )}
       </div>
     </div>
