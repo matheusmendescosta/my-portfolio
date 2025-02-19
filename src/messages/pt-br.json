@@ -1,6 +1,25 @@
 {
   "components": {
     "pages": {
+      "brain": {
+        "header_section": {
+          "title": "Meu cérebro 🧠",
+          "subtitle": "Minha jornada na tecnologia, registrada em tutoriais e anotações para mim (e para quem mais quiser aprender)"
+        },
+        "posts_section": {
+          "create_at": "Criado em",
+          "update_at": "Atualizado em",
+          "by": "por"
+        },
+        "post": {
+          "post_page": {
+            "slug": "Identificador",
+            "create_at": "Criado em",
+            "update_at": "Atualizado em",
+            "not_comments": "Nenhum comentário disponível."
+          }
+        }
+      },
       "home": {
         "about_section": {
           "title": "Sobre mim",
@@ -19,7 +38,7 @@
               "demo": "Ver demonstração",
               "code": "Ver código",
               "date": "2023 - Pausado",
-              "description": "Sistema de indicação da Faculdade Madre Tereza"
+              "description": "Sistema de indicação da Faculdade Madre Tereza - SIM"
             }
           ]
         },
@@ -30,7 +49,7 @@
               "company": "EvoTalks",
               "role": "Desenvolvedor de Integração",
               "date": "nov de 2024 - o momento · 3 meses",
-              "description": "Desenvolvendo integrações entre sistemas"
+              "description": "Desenvolvendo integrações entre sistemas sistemas usando javascript"
             },
             {
               "company": "RBR Digital",
@@ -75,22 +94,18 @@
             }
           ]
         }
-      },
-      "blog": {
-        "title": "Página em construção",
-        "subtitle": "Esta página está em construção. Por favor, volte mais tarde"
       }
     },
     "ui": {
       "footer": {
-        "licensed": "Licensed MIT",
+        "create_by": "Criado por Matheus Mendes 🗿",
         "github": "GitHub",
         "linkedin": "LinkedIn"
       },
       "navbar": {
         "navItems": {
           "home": "Inicio",
-          "blog": "Blog"
+          "brain": "cérebro"
         }
       },
       "locale_switcher": {

@@ -1,6 +1,25 @@
 {
   "components": {
     "pages": {
+      "brain": {
+        "header_section": {
+          "title": "My brain 🧠",
+          "subtitle": "My journey into technology, recorded in tutorials and notes for myself (and anyone else who wants to learn)"
+        },
+        "posts_section": {
+          "create_at": "Create at",
+          "update_at": "Update at",
+          "by": "by"
+        },
+        "post": {
+          "post_page": {
+            "slug": "Slug",
+            "create_at": "Create at",
+            "update_at": "Update at",
+            "not_comments": "No comments available."
+          }
+        }
+      },
       "home": {
         "about_section": {
           "title": "About me",
@@ -19,7 +38,7 @@
               "demo": "see demo",
               "code": "see code",
               "date": "2023 - Paused",
-              "description": "Indication System Faculdade Madre Tereza"
+              "description": "Indication System Faculdade Madre Tereza - SIM"
             }
           ]
         },
@@ -30,7 +49,7 @@
               "company": "EvoTalks",
               "role": "Integration Developer",
               "date": "nov 2024 - present · 3 months",
-              "description": "Developing integrations between systems"
+              "description": "Developing integrations between systems using javascript and api rest"
             },
             {
               "company": "RBR Digital",
@@ -75,22 +94,18 @@
             }
           ]
         }
-      },
-      "blog": {
-        "title": "Page Under Construction",
-        "subtitle": "This page is under construction. Please come back later"
       }
     },
     "ui": {
       "footer": {
-        "licensed": "Licensed MIT",
+        "create_by": "By Matheus Mendes 🗿",
         "github": "GitHub",
         "linkedin": "LinkedIn"
       },
       "navbar": {
         "navItems": {
           "home": "Home",
-          "blog": "Blog"
+          "brain": "brain"
         }
       },
       "locale_switcher": {

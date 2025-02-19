@@ -40,19 +40,15 @@ export default async function RootLayout({
   return (
     <ThemeProvider>
       <CustomDocument locale={locale}>
-        <body
-          className={twJoin(
-            `${geistSans.variable} ${geistMono.variable} flex min-h-screen items-center justify-center`,
-            'antialiased dark:bg-black dark:text-white'
-          )}
-        >
-          <div className="mx-4 mt-8 max-w-md">
-            <NextIntlClientProvider messages={messages}>
-              <Navbar />
-              {children}
+        <body className={twJoin(`${geistSans.variable} ${geistMono.variable} dark:bg-black dark:text-white`)}>
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            <div className="p-2">{children}</div>
+            <div className="flex justify-center">
               <Footer />
-            </NextIntlClientProvider>
-          </div>
+            </div>
+          </NextIntlClientProvider>
+
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || 'default-ga-id'} />
         </body>
       </CustomDocument>

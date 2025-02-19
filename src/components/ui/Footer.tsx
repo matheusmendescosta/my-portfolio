@@ -17,10 +17,10 @@ function ArrowIcon() {
 export default function Footer() {
   const t = useTranslations('components.ui.footer');
   return (
-    <footer className="mb-16">
+    <footer className="flex flex-col items-center my-4">
       <ul
         className={twJoin(
-          'font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 dark:text-neutral-300 md:flex-row md:space-x-4 md:space-y-0'
+          'font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300'
         )}
       >
         <li>
@@ -46,8 +46,8 @@ export default function Footer() {
           </a>
         </li>
       </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} {t('licensed')}
+      <p className="text-neutral-600 dark:text-neutral-300">
+        © {new Date().getFullYear()} {t('create_by')}
       </p>
     </footer>
   );

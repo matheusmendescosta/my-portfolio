@@ -10,8 +10,8 @@ const navItems = [
     name: 'home',
   },
   {
-    path: '/blog',
-    name: 'blog',
+    path: '/brain',
+    name: 'brain',
   },
 ];
 
@@ -23,13 +23,14 @@ const tutorialSteps = [
     position: 'absolute',
   },
 ];
+
 export function Navbar() {
   const t = useTranslations('components.ui.navbar');
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
+    <aside className="mb-16 py-2 tracking-tight">
       <div className="lg:sticky lg:top-20">
-        <nav className="fade relative flex scroll-pr-6 flex-row items-start px-0 pb-0 md:relative md:overflow-auto" id="nav">
-          <div className="flex flex-row space-x-0 pr-10">
+        <nav className="fade relative flex flex-col items-center px-0 pb-0 md:relative md:overflow-auto" id="nav">
+          <div className="flex flex-row space-x-4">
             {navItems.map((item) => {
               return (
                 <Link
@@ -41,8 +42,7 @@ export function Navbar() {
                 </Link>
               );
             })}
-          </div>
-          <div className="absolute right-0 flex space-x-4">
+
             <div id="changeLanguage">
               <LocaleSwitcher />
             </div>
