@@ -24,23 +24,23 @@ const PostSection = ({ id, title, slug, content, createdAt, updateAt, likes, com
 
   const formattedDateCreateAt = createdAt
     ? formatter.dateTime(new Date(createdAt), {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true,
-      })
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    })
     : '';
   const formattedDateUpdateAt = updateAt
     ? formatter.dateTime(new Date(updateAt), {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true,
-      })
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    })
     : '';
   return (
     <Link key={id} href={`brain/post/${id}`}>
