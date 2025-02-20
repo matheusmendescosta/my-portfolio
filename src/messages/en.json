@@ -93,6 +93,24 @@
               "description": "Postgraduate degree lato sensu MBA in Full Stack Development"
             }
           ]
+        },
+        "contact_section": {
+          "send_email": "Send email",
+          "description_email": "Fill out the form below to get in touch.",
+          "email": "Email",
+          "name": "Name",
+          "message": "Message",
+          "submit": "Submit",
+          "cancel": "Cancel"
+        },
+        "use_contact_me": {
+          "status_wait": "Waiting to send, please wait 🚀🚀🚀",
+          "status_working": "working on it 🫨",
+          "status_almost_done": "Almost there 🤏",
+          "toast_successes_title": "Message sent 🚀",
+          "toast_successes_description": "Your email has been sent successfully, I will contact you shortly 😎",
+          "toast_error_title": "Error sending email ❌",
+          "toast_error_description": "There was an error sending the email, please try again later 😢"
         }
       }
     },

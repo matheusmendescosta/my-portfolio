@@ -50,7 +50,7 @@ const PostSection = ({ id, title, slug, content, createdAt, updateAt, likes, com
           <MoveUpRightIcon />
         </div>
         <p className="pb-1 text-sm dark:text-gray-300">{slug}</p>
-        <Badge className="border-black dark:border-white" variant="secondary">
+        <Badge className="border-black dark:border-white" variant="outline">
           {category}
         </Badge>
         <div className="my-4 line-clamp-3 dark:text-gray-300">
@@ -58,7 +58,7 @@ const PostSection = ({ id, title, slug, content, createdAt, updateAt, likes, com
         </div>
         <div className="flex space-x-2">
           {tags.map((tag, index) => (
-            <Badge className="border-black dark:border-white" key={index} variant="outline">
+            <Badge className="border-black dark:border-white" key={index} variant="secondary">
               {tag}
             </Badge>
           ))}

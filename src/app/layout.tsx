@@ -9,6 +9,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 import CustomDocument from './CustomDocument';
 import './globals.css';
+import { Toaster } from '@/components/ui/toaster';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -43,6 +44,7 @@ export default async function RootLayout({
         <body className={twJoin(`${geistSans.variable} ${geistMono.variable} dark:bg-black dark:text-white`)}>
           <NextIntlClientProvider messages={messages}>
             <Navbar />
+            <Toaster />
             <div className="p-2">{children}</div>
             <div className="flex justify-center">
               <Footer />

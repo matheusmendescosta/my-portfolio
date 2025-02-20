@@ -9,13 +9,15 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Brain, Github, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { twJoin } from 'tailwind-merge';
 import useContactMe from './use-contact-me';
+import { useTranslations } from 'next-intl';
 
 const ContactSection = () => {
-  const { handleChange, handleSubmit, formData, status } = useContactMe();
+  const { handleChange, handleSubmit, formData, status, isOpen, setIsOpen } = useContactMe();
+  const t = useTranslations('components.pages.home.contact_section');
 
   return (
     <div className="flex items-center space-x-2">
@@ -35,9 +37,10 @@ const ContactSection = () => {
       >
         <Linkedin size={20} />
       </Link>
-      <Drawer>
+      <Drawer open={isOpen} onOpenChange={setIsOpen}>
         <DrawerTrigger asChild>
           <button
+            onClick={() => setIsOpen(true)}
             className={twJoin(
               'm-0 border-0 bg-transparent p-0 transition-transform hover:scale-150 hover:text-black dark:hover:text-gray-200'
             )}
@@ -47,54 +50,68 @@ const ContactSection = () => {
         </DrawerTrigger>
         <DrawerContent className="mx-auto flex max-w-md flex-col bg-white dark:bg-black">
           <DrawerHeader>
-            <DrawerTitle className="text-black dark:text-white">Enviar E-mail</DrawerTitle>
-            <DrawerDescription>Preencha o formulário abaixo para entrar em contato.</DrawerDescription>
+            <DrawerTitle className="text-black dark:text-white">{t('send_email')}</DrawerTitle>
+            <DrawerDescription>{t('description_email')}</DrawerDescription>
           </DrawerHeader>
-          <form className="grid gap-3 mx-4" onSubmit={handleSubmit}>
-            <div className="grid gap-3">
-              <label htmlFor="email">E-mail</label>
+          <form className="mx-4 grid gap-2" onSubmit={handleSubmit}>
+            <div className="grid gap-1">
+              <label htmlFor="email">{t('email')}</label>
               <input
                 name="email"
+                required
                 onChange={handleChange}
                 value={formData.email}
                 type="email"
                 id="email"
-                className="input border p-1 text-black dark:bg-slate-200"
+                className="input border p-1 dark:bg-slate-900 dark:text-white"
               />
             </div>
-            <div className="grid gap-3">
-              <label htmlFor="name">Nome</label>
+            <div className="grid gap-1">
+              <label htmlFor="name">{t('name')}</label>
               <input
                 name="name"
+                required
                 onChange={handleChange}
                 value={formData.name}
                 type="name"
                 id="name"
-                className="input border p-1 text-black dark:bg-slate-200"
+                className="input border p-1 text-black dark:bg-slate-900 dark:text-white"
               />
             </div>
-            <div className="grid gap-3">
-              <label htmlFor="message">Mensagem</label>
+            <div className="grid gap-1">
+              <label htmlFor="message">{t('message')}</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
                 id="message"
-                className="input border p-2 text-black dark:bg-slate-200"
+                className="input border p-2 text-black dark:bg-slate-900 dark:text-white"
                 rows={4}
               />
             </div>
-            <DrawerFooter className="flex flex-col space-y-2">
-              {status && <p className="text-center text-sm text-red-600">{status}</p>}
-              <Button type="submit">Enviar</Button>
+            <DrawerFooter className="flex flex-col">
+              <p className="text-md text-center font-semibold opacity-100 transition-opacity duration-500 ease-in-out">{status}</p>
+              <Button variant="secondary" type="submit">
+                {t('submit')}
+              </Button>
               <DrawerClose asChild>
-                <Button>Cancelar</Button>
+                <Button variant="secondary" onClick={() => setIsOpen(false)}>
+                  {t('cancel')}
+                </Button>
               </DrawerClose>
             </DrawerFooter>
           </form>
         </DrawerContent>
       </Drawer>
+      <Link
+        href="https://brain.matheusmendes.fun"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-transform hover:scale-150 hover:text-black dark:hover:text-gray-200"
+      >
+        <Brain size={20} />
+      </Link>
     </div>
   );
 };
