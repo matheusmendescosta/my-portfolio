@@ -93,6 +93,24 @@
               "description": "Pós-graduação lato sensu MBA em Desenvolvimento Full Stack"
             }
           ]
+        },
+        "contact_section": {
+          "send_email": "Enviar email",
+          "description_email": "Preencha o formulário abaixo para entrar em contato.",
+          "email": "Email",
+          "name": "Nome",
+          "message": "Mensagem",
+          "submit": "Enviar",
+          "cancel": "Cancelar"
+        },
+        "use_contact_me": {
+          "status_wait": "Aguarde enviando 🚀🚀🚀",
+          "status_working": "Estou trabalhando nisso 🫨",
+          "status_almost_done": "Quase lá 🤏",
+          "toast_successes_title": "Mensagem enviada 🚀",
+          "toast_successes_description": "Seu e-mail foi enviado com sucesso, entrarei em contato em breve 😎",
+          "toast_error_title": "Erro ao enviar email ❌",
+          "toast_error_description": "Ocorreu um erro ao enviar o e-mail, tente novamente mais tarde 😢"
         }
       }
     },
