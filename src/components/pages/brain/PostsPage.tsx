@@ -22,7 +22,7 @@ const PostsPage = () => {
               slug={post.slug}
               content={post.content}
               createdAt={post.createdAt}
-              comments={post.comments.length}
+              comments={post._count.comments}
               likes={post._count.likes}
               key={index}
               updateAt={post.updatedAt}

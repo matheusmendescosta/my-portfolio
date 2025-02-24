@@ -1,9 +1,10 @@
 'use client';
 
-import { useContext, useEffect, useRef } from 'react';
-import { usePost } from './use-post';
 import { ThemeContext } from '@/contexts/ThemeProvider';
 import { useFormatter, useTranslations } from 'next-intl';
+import { useContext, useEffect, useRef } from 'react';
+import CommentForm from './CommentForm';
+import { usePost } from './use-post';
 
 type PostPageProps = {
   postId: string;
@@ -74,24 +75,24 @@ const PostPage = ({ postId }: PostPageProps) => {
 
   const formattedDateCreateAt = post?.createdAt
     ? formatter.dateTime(new Date(post.createdAt), {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
-    })
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      })
     : '';
 
   const formattedDateUpdatedAt = post?.updatedAt
     ? formatter.dateTime(new Date(post.updatedAt), {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
-    })
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      })
     : '';
 
   if (!post) {
@@ -99,37 +100,60 @@ const PostPage = ({ postId }: PostPageProps) => {
   }
 
   return (
-    <div className="min-w-full rounded p-6 shadow">
-      <h1 className="text-3xl font-bold">{post?.title}</h1>
-      <p className="text-gray-500">
-        {t('slug')}: {post?.slug}
-      </p>
-      <div className="my-2 rounded-lg p-2">
-        <iframe ref={iframeRef} className="w-full" sandbox="allow-scripts allow-same-origin" />
-      </div>
-      <div className="mt-4 flex flex-col">
+    <div className="flex justify-center">
+      <div className="rounded p-6 shadow sm:w-9/12">
+        <h1 className="text-3xl font-bold">{post?.title}</h1>
+        <p className="text-gray-500">
+          {t('slug')}: {post?.slug}
+        </p>
+        <div className="my-2 rounded-lg p-2">
+          <iframe ref={iframeRef} className="w-full" sandbox="allow-scripts allow-same-origin" />
+        </div>
+        <div className="mt-4 flex flex-col"></div>
         <p className="text-sm text-gray-500">
           {t('create_at')} {formattedDateCreateAt}
         </p>
         <p className="text-sm text-gray-500">
           {t('update_at')} {formattedDateUpdatedAt}
         </p>
-      </div>
-      <div className="mt-4">
-        <p className="text-gray-700">❤️ {post?._count.likes}</p>
-      </div>
-      <div className="mt-4">
-        {post?.comments.length > 0 ? (
-          <ul className="space-y-2">
-            {post?.comments.map((comment, index) => (
-              <li key={index} className="text-gray-700">
-                {comment.content}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-500">{t('not_comments')}</p>
-        )}
+        <div className="mt-4">
+          <p className="text-gray-700">❤️ {post?._count.likes}</p>
+        </div>
+        <div className="mt-4 rounded-md p-2">
+          {post?.comments.length > 0 ? (
+            <ul className="space-y-2">
+              {post?.comments.map((comment, index) => (
+                <div key={index}>
+                  <li key={index} className="relative">
+                    <div className="rounded-lg border p-4 shadow-md">{comment.content}</div>
+                    <ul className="ml-4 mt-1 space-y-2 border-l-2 pl-4">
+                      {comment.replies.map((reply, replyIndex) => (
+                        <div key={replyIndex}>
+                          <li className="relative">
+                            <div className="rounded-lg border p-4 shadow-md">{reply.content}</div>
+                          </li>
+                        </div>
+                      ))}
+                      <CommentForm
+                        label="Escreva sua resposta"
+                        placeholder="Escreva aqui sua resposta"
+                        submit="Responder"
+                        postId={postId}
+                        parentCommentId={comment.id}
+                      />
+                    </ul>
+                  </li>
+                </div>
+              ))}
+              <CommentForm label="Escreva um comentario" placeholder="Escreva aqui seu comentario" submit="Comentar" postId={postId} />
+            </ul>
+          ) : (
+            <>
+              <p className="text-gray-500">{t('not_comments')}</p>
+              <CommentForm label="Escreva um comentario" placeholder="Escreva aqui seu comentario" submit="Comentar" postId={postId} />
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
