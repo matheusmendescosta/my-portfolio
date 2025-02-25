@@ -15,8 +15,8 @@ export type postsDto = {
     categoryId: string;
     _count: {
       likes: number;
+      comments: number;
     };
-    comments: [];
     author: {
       name: string;
     };
@@ -47,7 +47,6 @@ export type PostDTO = {
   category: categoryDto;
   tags: tagsDto;
 };
-
 export type commentDTO = {
   id: string;
   content: string;
@@ -55,6 +54,15 @@ export type commentDTO = {
   postId: string;
   userId: string;
   parentCommentId: string | null;
+  replies: RepliesDTO;
+}[];
+
+export type RepliesDTO = {
+  id: string;
+  content: string;
+  createdAt: string;
+  postId: string;
+  userId: string;
 }[];
 
 export type categoryDto = {

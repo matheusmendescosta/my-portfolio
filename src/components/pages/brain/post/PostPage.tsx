@@ -1,9 +1,11 @@
 'use client';
 
-import { useContext, useEffect, useRef } from 'react';
-import { usePost } from './use-post';
 import { ThemeContext } from '@/contexts/ThemeProvider';
 import { useFormatter, useTranslations } from 'next-intl';
+import { useContext, useEffect, useRef, useState } from 'react';
+import CommentForm from './CommentForm';
+import { usePost } from './use-post';
+import { Ellipsis } from 'lucide-react';
 
 type PostPageProps = {
   postId: string;
@@ -14,7 +16,7 @@ const PostPage = ({ postId }: PostPageProps) => {
   const formatter = useFormatter();
   const { post } = usePost({ postId });
   const theme = useContext(ThemeContext);
-
+  const [showAllReplies, setShowAllReplies] = useState<string | null>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
@@ -26,11 +28,12 @@ const PostPage = ({ postId }: PostPageProps) => {
         const bgColor = isDark ? '#000000' : '#ffffff';
         const textColor = isDark ? '#ffffff' : '#000000';
         const linkColor = isDark ? '#90cdf4' : '#1a73e8';
+
         document.open();
         document.write(`
-            <html>
-              <head>
-                <style>
+          <html>
+            <head>
+              <style>
                 body {
                   font-family: Arial, sans-serif;
                   padding: 10px;
@@ -50,16 +53,16 @@ const PostPage = ({ postId }: PostPageProps) => {
                   text-decoration: underline;
                 }
               </style>
-              </head>
-              <body>
-                ${post.content}
-              </body>
-            </html>
-          `);
+            </head>
+            <body>
+              ${post.content}
+            </body>
+          </html>
+        `);
         document.close();
 
         const adjustIframeHeight = () => {
-          if (iframeRef.current && iframeRef.current.contentWindow) {
+          if (iframeRef.current?.contentWindow) {
             const body = iframeRef.current.contentDocument?.body;
             const height = body ? body.scrollHeight : 0;
             iframeRef.current.style.height = `${height}px`;
@@ -99,37 +102,73 @@ const PostPage = ({ postId }: PostPageProps) => {
   }
 
   return (
-    <div className="min-w-full rounded p-6 shadow">
-      <h1 className="text-3xl font-bold">{post?.title}</h1>
-      <p className="text-gray-500">
-        {t('slug')}: {post?.slug}
-      </p>
-      <div className="my-2 rounded-lg p-2">
-        <iframe ref={iframeRef} className="w-full" sandbox="allow-scripts allow-same-origin" />
-      </div>
-      <div className="mt-4 flex flex-col">
+    <div className="flex justify-center">
+      <div className="rounded p-6 shadow sm:w-9/12">
+        <h1 className="text-3xl font-bold">{post.title}</h1>
+        <p className="text-gray-500">
+          {t('slug')}: {post.slug}
+        </p>
+        <div className="my-2 rounded-lg p-2">
+          <iframe ref={iframeRef} className="w-full" sandbox="allow-scripts allow-same-origin" />
+        </div>
         <p className="text-sm text-gray-500">
           {t('create_at')} {formattedDateCreateAt}
         </p>
         <p className="text-sm text-gray-500">
           {t('update_at')} {formattedDateUpdatedAt}
         </p>
-      </div>
-      <div className="mt-4">
-        <p className="text-gray-700">❤️ {post?._count.likes}</p>
-      </div>
-      <div className="mt-4">
-        {post?.comments.length > 0 ? (
-          <ul className="space-y-2">
-            {post?.comments.map((comment, index) => (
-              <li key={index} className="text-gray-700">
-                {comment.content}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-500">{t('not_comments')}</p>
-        )}
+        <div className="mt-4">
+          <p className="text-gray-700">❤️ {post._count.likes}</p>
+        </div>
+        <div className="mt-4 rounded-md p-2">
+          {post.comments.length > 0 ? (
+            <ul className="space-y-2">
+              {post.comments.map((comment) => (
+                <li key={comment.id} className="relative">
+                  <div className="rounded-lg border p-4 shadow-md">{comment.content}</div>
+                  <ul className="ml-4 mt-1 space-y-2 border-l-2 pl-4">
+                    {comment.replies.length > 0 && (
+                      <>
+                        {comment.replies.slice(0, 1).map((reply) => (
+                          <li key={reply.id} className="relative">
+                            <div className="rounded-lg border p-4 shadow-md">{reply.content}</div>
+                          </li>
+                        ))}
+                        {comment.replies.length > 2 && (
+                          <div
+                            className="flex cursor-pointer justify-center text-center text-gray-500"
+                            onClick={() => setShowAllReplies(showAllReplies === comment.id ? null : comment.id)}
+                          >
+                            {showAllReplies === comment.id ? <Ellipsis /> : <Ellipsis />}
+                          </div>
+                        )}
+                        {showAllReplies === comment.id &&
+                          comment.replies.slice(1).map((reply) => (
+                            <li key={reply.id} className="relative">
+                              <div className="rounded-lg border p-4 shadow-md">{reply.content}</div>
+                            </li>
+                          ))}
+                      </>
+                    )}
+                  </ul>
+                  <CommentForm
+                    label="Escreva sua resposta"
+                    placeholder="Escreva aqui sua resposta"
+                    submit="Responder"
+                    postId={postId}
+                    parentCommentId={comment.id}
+                  />
+                </li>
+              ))}
+              <CommentForm label="Escreva um comentário" placeholder="Escreva aqui seu comentário" submit="Comentar" postId={postId} />
+            </ul>
+          ) : (
+            <>
+              <p className="text-gray-500">{t('not_comments')}</p>
+              <CommentForm label="Escreva um comentário" placeholder="Escreva aqui seu comentário" submit="Comentar" postId={postId} />
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
