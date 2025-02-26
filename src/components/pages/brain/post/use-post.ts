@@ -30,5 +30,5 @@ export const usePost = ({ postId }: UsePostProps) => {
     loadPost();
   }, [loadPost]);
 
-  return { post, setPost };
+  return { post, setPost, loadPost };
 };

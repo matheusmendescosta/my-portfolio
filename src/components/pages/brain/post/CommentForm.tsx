@@ -9,11 +9,12 @@ type CommentFromProps = {
   submit: string;
   postId: string;
   parentCommentId?: string;
+  refetch: () => void;
 };
 
-const CommentForm = ({ label, placeholder, submit, postId, parentCommentId }: CommentFromProps) => {
+const CommentForm = ({ label, placeholder, submit, postId, parentCommentId, refetch }: CommentFromProps) => {
   const [content, setContent] = useState('');
-  const { handlerSubmitComment, isSubmitting } = useNewComment({ postId, content, parentCommentId, setContent });
+  const { handlerSubmitComment, isSubmitting } = useNewComment({ postId, content, parentCommentId, setContent, refetch });
 
   return (
     <form className="mx-auto mt-2 w-full" onSubmit={(e) => handlerSubmitComment(e)}>
