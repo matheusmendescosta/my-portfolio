@@ -77,24 +77,24 @@ const PostPage = ({ postId }: PostPageProps) => {
 
   const formattedDateCreateAt = post?.createdAt
     ? formatter.dateTime(new Date(post.createdAt), {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      })
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    })
     : '';
 
   const formattedDateUpdatedAt = post?.updatedAt
     ? formatter.dateTime(new Date(post.updatedAt), {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      })
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    })
     : '';
 
   if (!post) {
