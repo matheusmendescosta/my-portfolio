@@ -1,7 +1,7 @@
 'use client';
 
 import { ThemeContext } from '@/contexts/ThemeProvider';
-import { ChevronDown, ChevronUp, CircleMinus, CirclePlus, Ellipsis } from 'lucide-react';
+import { CircleMinus, CirclePlus } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useContext, useEffect, useRef, useState } from 'react';
 import CommentForm from './CommentForm';
@@ -98,7 +98,11 @@ const PostPage = ({ postId }: PostPageProps) => {
     : '';
 
   if (!post) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="h-32 w-32 animate-spin rounded-full border-b-2 border-t-2 border-blue-500"></div>
+      </div>
+    );
   }
 
   return (
@@ -153,9 +157,9 @@ const PostPage = ({ postId }: PostPageProps) => {
                   </ul>
                   <div className="ml-4 mt-1 space-y-2 pl-4">
                     <CommentForm
-                      label="Escreva sua resposta"
-                      placeholder="Escreva aqui sua resposta"
-                      submit="Responder"
+                      label={t('label_title_answer')}
+                      placeholder={t('label_placeholder_answer')}
+                      submit={t('submit_answer')}
                       postId={postId}
                       parentCommentId={comment.id}
                       refetch={loadPost}
@@ -164,9 +168,9 @@ const PostPage = ({ postId }: PostPageProps) => {
                 </li>
               ))}
               <CommentForm
-                label="Escreva um comentário"
-                placeholder="Escreva aqui seu comentário"
-                submit="Comentar"
+                label={t('label_title_commentary')}
+                placeholder={t('label_placeholder_commentary')}
+                submit={t('submit_commentary')}
                 postId={postId}
                 refetch={loadPost}
               />
@@ -175,9 +179,9 @@ const PostPage = ({ postId }: PostPageProps) => {
             <>
               <p className="text-gray-500">{t('not_comments')}</p>
               <CommentForm
-                label="Escreva um comentário"
-                placeholder="Escreva aqui seu comentário"
-                submit="Comentar"
+                label={t('label_title_comment')}
+                placeholder={t('label_placeholder_comment')}
+                submit={t('label_submit_comment')}
                 postId={postId}
                 refetch={loadPost}
               />

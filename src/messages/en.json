@@ -11,12 +11,21 @@
           "update_at": "Update at",
           "by": "by"
         },
+        "posts_page": {
+          "no_posts": "No posts available."
+        },
         "post": {
           "post_page": {
             "slug": "Slug",
             "create_at": "Create at",
             "update_at": "Update at",
-            "not_comments": "No comments available."
+            "not_comments": "No comments available.",
+            "label_title_answer": "Answer this comment",
+            "label_placeholder_answer": "Write your answer here",
+            "submit_answer": "Answer",
+            "label_title_commentary": "Leave a comment",
+            "label_placeholder_commentary": "Write your comment here",
+            "submit_commentary": "Comment"
           }
         }
       },

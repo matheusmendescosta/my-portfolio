@@ -11,12 +11,21 @@
           "update_at": "Atualizado em",
           "by": "por"
         },
+        "posts_page": {
+          "no_posts": "Nenhum post disponível."
+        },
         "post": {
           "post_page": {
             "slug": "Identificador",
             "create_at": "Criado em",
             "update_at": "Atualizado em",
-            "not_comments": "Nenhum comentário disponível."
+            "not_comments": "Nenhum comentário disponível.",
+            "label_title_answer": "Responder esse comentário",
+            "label_placeholder_answer": "Escreva aqui sua resposta",
+            "submit_answer": "Responder",
+            "label_title_commentary": "Deixe um comentário",
+            "label_placeholder_commentary": "Escreva aqui seu comentário",
+            "submit_commentary": "Comentar"
           }
         }
       },
