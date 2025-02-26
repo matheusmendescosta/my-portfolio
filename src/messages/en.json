@@ -26,6 +26,12 @@
             "label_title_commentary": "Leave a comment",
             "label_placeholder_commentary": "Write your comment here",
             "submit_commentary": "Comment"
+          },
+          "use_new_comment": {
+            "title_commentary": "Comment sent 🚀",
+            "description_commentary": "Your comment has been sent successfully, thank you for your contribution 😎",
+            "title_commentary_error": "Comment limit reached ❌",
+            "description_commentary_error": "You have reached the comment limit per hour, please try again later 😢"
           }
         }
       },

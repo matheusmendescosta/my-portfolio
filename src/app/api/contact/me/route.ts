@@ -3,10 +3,24 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { formData, captchaToken } = await req.json();
+    const { name, email, message } = formData;
 
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: 'E-mail e mensagem são obrigatórios' }, { status: 400 });
+    if (!name || !email || !message || !captchaToken) {
+      return NextResponse.json({ error: 'Todos os campos são obrigatórios' }, { status: 400 });
+    }
+
+    const cfSecret = process.env.CLOUDFLARE_TURNSTILE_SECRET;
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: cfSecret, response: captchaToken }),
+    });
+
+    const { success } = await verifyRes.json();
+
+    if (!success) {
+      return NextResponse.json({ error: 'Falha na verificação do CAPTCHA' }, { status: 403 });
     }
 
     const transporter = nodemailer.createTransport({
