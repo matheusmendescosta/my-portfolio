@@ -1,11 +1,11 @@
 'use client';
 
 import { ThemeContext } from '@/contexts/ThemeProvider';
+import { CircleMinus, CirclePlus } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useContext, useEffect, useRef, useState } from 'react';
 import CommentForm from './CommentForm';
 import { usePost } from './use-post';
-import { Ellipsis } from 'lucide-react';
 
 type PostPageProps = {
   postId: string;
@@ -14,7 +14,7 @@ type PostPageProps = {
 const PostPage = ({ postId }: PostPageProps) => {
   const t = useTranslations('components.pages.brain.post.post_page');
   const formatter = useFormatter();
-  const { post } = usePost({ postId });
+  const { post, loadPost } = usePost({ postId });
   const theme = useContext(ThemeContext);
   const [showAllReplies, setShowAllReplies] = useState<string | null>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -98,7 +98,11 @@ const PostPage = ({ postId }: PostPageProps) => {
     : '';
 
   if (!post) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="h-32 w-32 animate-spin rounded-full border-b-2 border-t-2 border-blue-500"></div>
+      </div>
+    );
   }
 
   return (
@@ -139,7 +143,7 @@ const PostPage = ({ postId }: PostPageProps) => {
                             className="flex cursor-pointer justify-center text-center text-gray-500"
                             onClick={() => setShowAllReplies(showAllReplies === comment.id ? null : comment.id)}
                           >
-                            {showAllReplies === comment.id ? <Ellipsis /> : <Ellipsis />}
+                            {showAllReplies === comment.id ? <CircleMinus /> : <CirclePlus />}
                           </div>
                         )}
                         {showAllReplies === comment.id &&
@@ -151,21 +155,36 @@ const PostPage = ({ postId }: PostPageProps) => {
                       </>
                     )}
                   </ul>
-                  <CommentForm
-                    label="Escreva sua resposta"
-                    placeholder="Escreva aqui sua resposta"
-                    submit="Responder"
-                    postId={postId}
-                    parentCommentId={comment.id}
-                  />
+                  <div className="ml-4 mt-1 space-y-2 pl-4">
+                    <CommentForm
+                      label={t('label_title_answer')}
+                      placeholder={t('label_placeholder_answer')}
+                      submit={t('submit_answer')}
+                      postId={postId}
+                      parentCommentId={comment.id}
+                      refetch={loadPost}
+                    />
+                  </div>
                 </li>
               ))}
-              <CommentForm label="Escreva um comentário" placeholder="Escreva aqui seu comentário" submit="Comentar" postId={postId} />
+              <CommentForm
+                label={t('label_title_commentary')}
+                placeholder={t('label_placeholder_commentary')}
+                submit={t('submit_commentary')}
+                postId={postId}
+                refetch={loadPost}
+              />
             </ul>
           ) : (
             <>
               <p className="text-gray-500">{t('not_comments')}</p>
-              <CommentForm label="Escreva um comentário" placeholder="Escreva aqui seu comentário" submit="Comentar" postId={postId} />
+              <CommentForm
+                label={t('label_title_comment')}
+                placeholder={t('label_placeholder_comment')}
+                submit={t('label_submit_comment')}
+                postId={postId}
+                refetch={loadPost}
+              />
             </>
           )}
         </div>

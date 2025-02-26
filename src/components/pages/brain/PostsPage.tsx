@@ -1,13 +1,20 @@
 'use client';
 
-import React from 'react';
-import { usePosts } from './use-posts';
-import PostSection from './PostSection';
 import { useTranslations } from 'next-intl';
+import PostSection from './PostSection';
+import { usePosts } from './use-posts';
 
 const PostsPage = () => {
-  const t = useTranslations();
+  const t = useTranslations('components.pages.brain.posts_page');
   const { posts } = usePosts();
+
+  if (!posts) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="h-32 w-32 animate-spin rounded-full border-b-2 border-t-2 border-blue-500"></div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -31,7 +38,7 @@ const PostsPage = () => {
           ))}
         </>
       ) : (
-        <div className="mt-10 text-center text-gray-500">Infelizmente, não há posts ainda.</div>
+        <div className="mt-10 text-center text-gray-500">{t('no_posts')}</div>
       )}
     </>
   );

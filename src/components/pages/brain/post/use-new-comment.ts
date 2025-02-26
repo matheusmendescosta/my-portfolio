@@ -1,5 +1,6 @@
 'use client';
 
+import { useToast } from '@/hooks/use-toast';
 import React, { useState } from 'react';
 
 type FormProps = {
@@ -7,10 +8,12 @@ type FormProps = {
   postId: string;
   parentCommentId?: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
+  refetch: () => void;
 };
 
-export const useNewComment = ({ postId, content, parentCommentId, setContent }: FormProps) => {
+export const useNewComment = ({ postId, content, parentCommentId, setContent, refetch }: FormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handlerSubmitComment = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -25,10 +28,20 @@ export const useNewComment = ({ postId, content, parentCommentId, setContent }: 
         body: JSON.stringify({ content, ...(parentCommentId ? { parentCommentId } : {}) }),
       });
       if (!response.ok) {
-        throw new Error('Erro ao adicionar comentário');
+        toast({
+          title: 'To many requests',
+          description: 'Please wait a few seconds before trying again',
+          variant: 'destructive',
+        });
+      } else {
+        toast({
+          title: 'Comment added',
+          description: 'Your comment has been added successfully',
+          variant: 'default',
+        });
+        setContent('');
+        refetch();
       }
-      setContent('');
-      window.location.reload();
     } catch (error) {
       console.error(error);
     } finally {
