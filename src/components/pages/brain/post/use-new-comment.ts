@@ -1,6 +1,7 @@
 'use client';
 
 import { useToast } from '@/hooks/use-toast';
+import { useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 
 type FormProps = {
@@ -14,6 +15,7 @@ type FormProps = {
 export const useNewComment = ({ postId, content, parentCommentId, setContent, refetch }: FormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const t = useTranslations('components.pages.brain.post.use_new_comment');
 
   const handlerSubmitComment = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -29,14 +31,14 @@ export const useNewComment = ({ postId, content, parentCommentId, setContent, re
       });
       if (!response.ok) {
         toast({
-          title: 'To many requests',
-          description: 'Please wait a few seconds before trying again',
+          title: t('title_commentary_error'),
+          description: t('description_commentary_error'),
           variant: 'destructive',
         });
       } else {
         toast({
-          title: 'Comment added',
-          description: 'Your comment has been added successfully',
+          title: t('title_commentary'),
+          description: t('description_commentary'),
           variant: 'default',
         });
         setContent('');

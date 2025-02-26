@@ -9,14 +9,15 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
+import { Turnstile } from '@marsidev/react-turnstile';
 import { Brain, Github, Linkedin, Mail } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { twJoin } from 'tailwind-merge';
 import useContactMe from './use-contact-me';
-import { useTranslations } from 'next-intl';
 
 const ContactSection = () => {
-  const { handleChange, handleSubmit, formData, status, isOpen, setIsOpen } = useContactMe();
+  const { handleChange, handleSubmit, formData, status, isOpen, setIsOpen, setCaptchaToken } = useContactMe();
   const t = useTranslations('components.pages.home.contact_section');
 
   return (
@@ -87,8 +88,11 @@ const ContactSection = () => {
                 required
                 id="message"
                 className="input border p-2 text-black dark:bg-slate-900 dark:text-white"
-                rows={4}
+                rows={3}
               />
+            </div>
+            <div className='grid gap-1 justify-center pt-4'>
+              <Turnstile siteKey={process.env.NEXT_PUBLIC_CLOUDFLARE_SITE_KEY!} onSuccess={setCaptchaToken} />
             </div>
             <DrawerFooter className="flex flex-col">
               <p className="text-md text-center font-semibold opacity-100 transition-opacity duration-500 ease-in-out">{status}</p>

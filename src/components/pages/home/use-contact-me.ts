@@ -6,6 +6,7 @@ import { useState, useEffect, useMemo } from 'react';
 
 const useContactMe = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [status, setStatus] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const { toast } = useToast();
@@ -34,11 +35,16 @@ const useContactMe = () => {
     e.preventDefault();
     setStatus(t(statusKeys[0]));
 
+    if (!captchaToken) {
+      setStatus('Por favor, complete o CAPTCHA!');
+      return;
+    }
+
     try {
       const response = await fetch('/api/contact/me', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ formData, captchaToken }),
       });
 
       if (response.ok) {
@@ -69,6 +75,7 @@ const useContactMe = () => {
     status,
     isOpen,
     setIsOpen,
+    setCaptchaToken,
   };
 };
 

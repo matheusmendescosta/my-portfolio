@@ -133,12 +133,12 @@ const PostPage = ({ postId }: PostPageProps) => {
                   <ul className="ml-4 mt-1 space-y-2 border-l-2 pl-4">
                     {comment.replies.length > 0 && (
                       <>
-                        {comment.replies.slice(0, 1).map((reply) => (
+                        {comment.replies.slice(0, showAllReplies === comment.id ? undefined : 1).map((reply) => (
                           <li key={reply.id} className="relative">
                             <div className="rounded-lg border p-4 shadow-md">{reply.content}</div>
                           </li>
                         ))}
-                        {comment.replies.length > 2 && (
+                        {comment.replies.length > 1 && (
                           <div
                             className="flex cursor-pointer justify-center text-center text-gray-500"
                             onClick={() => setShowAllReplies(showAllReplies === comment.id ? null : comment.id)}
@@ -146,12 +146,6 @@ const PostPage = ({ postId }: PostPageProps) => {
                             {showAllReplies === comment.id ? <CircleMinus /> : <CirclePlus />}
                           </div>
                         )}
-                        {showAllReplies === comment.id &&
-                          comment.replies.slice(1).map((reply) => (
-                            <li key={reply.id} className="relative">
-                              <div className="rounded-lg border p-4 shadow-md">{reply.content}</div>
-                            </li>
-                          ))}
                       </>
                     )}
                   </ul>
@@ -162,7 +156,10 @@ const PostPage = ({ postId }: PostPageProps) => {
                       submit={t('submit_answer')}
                       postId={postId}
                       parentCommentId={comment.id}
-                      refetch={loadPost}
+                      refetch={() => {
+                        loadPost();
+                        setShowAllReplies(comment.id);
+                      }}
                     />
                   </div>
                 </li>
