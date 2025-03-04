@@ -24,23 +24,23 @@ const PostSection = ({ id, title, slug, content, createdAt, updateAt, likes, com
 
   const formattedDateCreateAt = createdAt
     ? formatter.dateTime(new Date(createdAt), {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    })
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      })
     : '';
   const formattedDateUpdateAt = updateAt
     ? formatter.dateTime(new Date(updateAt), {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    })
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      })
     : '';
   return (
     <Link key={id} href={`brain/post/${id}`}>
@@ -53,9 +53,11 @@ const PostSection = ({ id, title, slug, content, createdAt, updateAt, likes, com
         <Badge className="border-black dark:border-white" variant="outline">
           {category}
         </Badge>
-        <div className="my-4 line-clamp-3 dark:text-gray-300">
-          {content.trim() != '' && <div className="mb-4 rounded-sm dark:border-b-gray-500" dangerouslySetInnerHTML={{ __html: content }} />}
-        </div>
+        {content.trim() !== '' && (
+          <div className="my-4 rounded-sm dark:border-b-gray-500">
+            <div className="max-h-[4.5rem] overflow-hidden text-ellipsis break-words" dangerouslySetInnerHTML={{ __html: content }} />
+          </div>
+        )}
         <div className="flex space-x-2">
           {tags.map((tag, index) => (
             <Badge className="border-black dark:border-white" key={index} variant="secondary">
