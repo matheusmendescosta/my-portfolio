@@ -25,7 +25,9 @@
             "submit_answer": "Answer",
             "label_title_commentary": "Leave a comment",
             "label_placeholder_commentary": "Write your comment here",
-            "submit_commentary": "Comment"
+            "submit_commentary": "Comment",
+            "label_commentary": "Anonymous said",
+            "label_replies": "Another anonymous replied"
           },
           "use_new_comment": {
             "title_commentary": "Comment sent 🚀",

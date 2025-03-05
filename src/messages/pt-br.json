@@ -25,7 +25,9 @@
             "submit_answer": "Responder",
             "label_title_commentary": "Deixe um comentário",
             "label_placeholder_commentary": "Escreva aqui seu comentário",
-            "submit_commentary": "Comentar"
+            "submit_commentary": "Comentar",
+            "label_commentary": "Anônimo disse",
+            "label_replies": "Outro anônimo respondeu"
           },
           "use_new_comment": {
             "title_commentary": "Mensagem enviado 🚀",

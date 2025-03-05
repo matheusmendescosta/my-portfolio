@@ -1,7 +1,7 @@
 'use client';
 
 import { ThemeContext } from '@/contexts/ThemeProvider';
-import { CircleMinus, CirclePlus } from 'lucide-react';
+import { CircleMinus, Ellipsis, Ghost } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useContext, useEffect, useRef, useState } from 'react';
 import CommentForm from './CommentForm';
@@ -129,21 +129,38 @@ const PostPage = ({ postId }: PostPageProps) => {
             <ul className="space-y-2">
               {post.comments.map((comment) => (
                 <li key={comment.id} className="relative">
+                  <span className="flex">
+                    <Ghost /> <p className="pl-1">{t('label_commentary')} ...</p>
+                  </span>
                   <div className="rounded-lg border p-4 shadow-md">{comment.content}</div>
                   <ul className="ml-4 mt-1 space-y-2 border-l-2 pl-4">
                     {comment.replies.length > 0 && (
                       <>
-                        {comment.replies.slice(0, showAllReplies === comment.id ? undefined : 1).map((reply) => (
-                          <li key={reply.id} className="relative">
-                            <div className="rounded-lg border p-4 shadow-md">{reply.content}</div>
-                          </li>
-                        ))}
-                        {comment.replies.length > 1 && (
+                        {comment.replies
+                          .filter((_, index, array) => (showAllReplies === comment.id ? true : index === 0 || index === array.length - 1))
+                          .map((reply, index, _) => (
+                            <li key={reply.id} className="relative">
+                              <span className="flex">
+                                <Ghost /> <p className="pl-1">{t('label_replies')} ...</p>
+                              </span>
+                              <div className="rounded-lg border p-4 shadow-md">{reply.content}</div>
+
+                              {index === 0 && comment.replies.length > 2 && showAllReplies !== comment.id && (
+                                <div
+                                  className="my-2 flex cursor-pointer justify-center text-center text-gray-500"
+                                  onClick={() => setShowAllReplies(comment.id)}
+                                >
+                                  <Ellipsis />
+                                </div>
+                              )}
+                            </li>
+                          ))}
+                        {showAllReplies === comment.id && (
                           <div
                             className="flex cursor-pointer justify-center text-center text-gray-500"
-                            onClick={() => setShowAllReplies(showAllReplies === comment.id ? null : comment.id)}
+                            onClick={() => setShowAllReplies(null)}
                           >
-                            {showAllReplies === comment.id ? <CircleMinus /> : <CirclePlus />}
+                            <CircleMinus />
                           </div>
                         )}
                       </>
@@ -176,9 +193,9 @@ const PostPage = ({ postId }: PostPageProps) => {
             <>
               <p className="text-gray-500">{t('not_comments')}</p>
               <CommentForm
-                label={t('label_title_comment')}
-                placeholder={t('label_placeholder_comment')}
-                submit={t('label_submit_comment')}
+                label={t('label_title_commentary')}
+                placeholder={t('label_placeholder_commentary')}
+                submit={t('submit_commentary')}
                 postId={postId}
                 refetch={loadPost}
               />
