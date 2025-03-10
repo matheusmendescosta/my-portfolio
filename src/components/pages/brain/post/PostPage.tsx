@@ -1,10 +1,11 @@
 'use client';
 
 import { ThemeContext } from '@/contexts/ThemeProvider';
-import { CircleMinus, Ellipsis, Ghost } from 'lucide-react';
+import { CircleMinus, Ellipsis, Ghost, ThumbsUp } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useContext, useEffect, useRef, useState } from 'react';
 import CommentForm from './CommentForm';
+import { useNewLike } from './use-new-like';
 import { usePost } from './use-post';
 
 type PostPageProps = {
@@ -15,6 +16,7 @@ const PostPage = ({ postId }: PostPageProps) => {
   const t = useTranslations('components.pages.brain.post.post_page');
   const formatter = useFormatter();
   const { post, loadPost } = usePost({ postId });
+  const { handlerSubmitLike } = useNewLike({ postId });
   const theme = useContext(ThemeContext);
   const [showAllReplies, setShowAllReplies] = useState<string | null>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -121,8 +123,14 @@ const PostPage = ({ postId }: PostPageProps) => {
         <p className="text-sm text-gray-500">
           {t('update_at')} {formattedDateUpdatedAt}
         </p>
-        <div className="mt-4">
-          <p className="text-gray-700">❤️ {post._count.likes}</p>
+        <div className="mt-4 flex">
+          <button
+            className="transform text-gray-700 transition-transform duration-300 ease-in-out hover:scale-110"
+            onClick={handlerSubmitLike}
+          >
+            <ThumbsUp />
+          </button>
+          <p className="ml-2">{post._count.likes}</p>
         </div>
         <div className="mt-4 rounded-md p-2">
           {post.comments.length > 0 ? (

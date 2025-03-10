@@ -34,6 +34,12 @@
             "description_commentary": "Sua mensagem foi enviado com sucesso, obrigado pela contribuição 😎",
             "title_commentary_error": "Limite de comentários atingido ❌",
             "description_commentary_error": "Você atingiu o limite de comentários por hora, tente novamente mais tarde 😢"
+          }, 
+          "use_new_like": {
+            "title_error_like": "Error ❌",
+            "description_error_like": "Você já curtiu esse post",
+            "title_like": "Sucesso 🚀",
+            "description_like": "Você curtiu esse post"
           }
         }
       },

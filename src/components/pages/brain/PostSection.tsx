@@ -1,8 +1,7 @@
 import { Badge } from '@/components/ui/badge';
-import { BookHeart, MessageSquareCode, MoveUpRightIcon } from 'lucide-react';
+import { MessageCircle, MoveUpRightIcon, ThumbsUp } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import Link from 'next/link';
-import React from 'react';
 
 type PostsSectionProps = {
   id: string;
@@ -78,10 +77,10 @@ const PostSection = ({ id, title, slug, content, createdAt, updateAt, likes, com
         </p>
         <div className="flex justify-start space-x-2 pt-2">
           <div className="flex space-x-2 text-sm dark:text-gray-200">
-            <BookHeart /> <span>{likes}</span>
+            <ThumbsUp /> <span>{likes}</span>
           </div>
           <div className="flex space-x-2 text-sm dark:text-gray-200">
-            <MessageSquareCode /> <span>{comments}</span>
+            <MessageCircle /> <span>{comments}</span>
           </div>
         </div>
       </div>
