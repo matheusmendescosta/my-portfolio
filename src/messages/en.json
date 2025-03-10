@@ -34,6 +34,12 @@
             "description_commentary": "Your comment has been sent successfully, thank you for your contribution 😎",
             "title_commentary_error": "Comment limit reached ❌",
             "description_commentary_error": "You have reached the comment limit per hour, please try again later 😢"
+          },
+          "use_new_like": {
+            "title_error_like": "Error ❌",
+            "description_error_like": "Already liked",
+            "title_like": "Success 🚀",
+            "description_like": "You liked the post"
           }
         }
       },
