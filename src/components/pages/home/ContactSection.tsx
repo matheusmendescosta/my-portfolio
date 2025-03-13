@@ -17,7 +17,7 @@ import { twJoin } from 'tailwind-merge';
 import useContactMe from './use-contact-me';
 
 const ContactSection = () => {
-  const { handleChange, handleSubmit, formData, status, isOpen, setIsOpen, setCaptchaToken } = useContactMe();
+  const { handleChange, handleSubmit, formData, status, isOpen, setIsOpen, setCaptchaToken, isSubmitting } = useContactMe();
   const t = useTranslations('components.pages.home.contact_section');
 
   return (
@@ -91,16 +91,21 @@ const ContactSection = () => {
                 rows={3}
               />
             </div>
-            <div className='grid gap-1 justify-center pt-4'>
+            <div className="grid justify-center gap-1 pt-4">
               <Turnstile siteKey={process.env.NEXT_PUBLIC_CLOUDFLARE_SITE_KEY!} onSuccess={setCaptchaToken} />
             </div>
             <DrawerFooter className="flex flex-col">
               <p className="text-md text-center font-semibold opacity-100 transition-opacity duration-500 ease-in-out">{status}</p>
-              <Button variant="secondary" type="submit">
-                {t('submit')}
+              <Button variant="secondary" type="submit" disabled={isSubmitting} className="relative">
+                {isSubmitting && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                  </div>
+                )}
+                <span className={isSubmitting ? 'opacity-0' : ''}>{t('submit')}</span>
               </Button>
               <DrawerClose asChild>
-                <Button variant="secondary" onClick={() => setIsOpen(false)}>
+                <Button variant="secondary" onClick={() => setIsOpen(false)} disabled={isSubmitting}>
                   {t('cancel')}
                 </Button>
               </DrawerClose>
