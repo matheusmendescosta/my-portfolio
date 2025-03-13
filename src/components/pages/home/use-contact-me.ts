@@ -9,6 +9,7 @@ const useContactMe = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [status, setStatus] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const t = useTranslations('components.pages.home.use_contact_me');
 
@@ -34,9 +35,11 @@ const useContactMe = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus(t(statusKeys[0]));
+    setIsSubmitting(true);
 
     if (!captchaToken) {
       setStatus('Por favor, complete o CAPTCHA!');
+      setIsSubmitting(false);
       return;
     }
 
@@ -65,6 +68,8 @@ const useContactMe = () => {
       }
     } catch (error) {
       setStatus('');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -76,6 +81,7 @@ const useContactMe = () => {
     isOpen,
     setIsOpen,
     setCaptchaToken,
+    isSubmitting,
   };
 };
 
