@@ -5,6 +5,7 @@ import { CircleMinus, Ellipsis, Ghost, ThumbsUp } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useContext, useEffect, useRef, useState } from 'react';
 import CommentForm from './CommentForm';
+import SavePostForm from './SavePostForm';
 import { useNewLike } from './use-new-like';
 import { usePost } from './use-post';
 
@@ -123,14 +124,14 @@ const PostPage = ({ postId }: PostPageProps) => {
         <p className="text-sm text-gray-500">
           {t('update_at')} {formattedDateUpdatedAt}
         </p>
-        <div className="mt-4 flex">
-          <button
-            className="transform text-gray-700 transition-transform duration-300 ease-in-out hover:scale-110"
-            onClick={handlerSubmitLike}
-          >
-            <ThumbsUp />
-          </button>
-          <p className="ml-2">{post._count.likes}</p>
+        <div className="mt-4 flex justify-start space-x-2">
+          <div className="flex">
+            <button className="transform transition-transform duration-300 ease-in-out hover:scale-110" onClick={handlerSubmitLike}>
+              <ThumbsUp />
+            </button>
+            <p className="ml-2">{post._count.likes}</p>
+          </div>
+          <SavePostForm postId={post.id} />
         </div>
         <div className="mt-4 rounded-md p-2">
           {post.comments.length > 0 ? (

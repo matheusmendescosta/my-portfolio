@@ -34,12 +34,24 @@
             "description_commentary": "Sua mensagem foi enviado com sucesso, obrigado pela contribuição 😎",
             "title_commentary_error": "Limite de comentários atingido ❌",
             "description_commentary_error": "Você atingiu o limite de comentários por hora, tente novamente mais tarde 😢"
-          }, 
+          },
           "use_new_like": {
             "title_error_like": "Error ❌",
             "description_error_like": "Você já curtiu esse post",
             "title_like": "Sucesso 🚀",
             "description_like": "Você curtiu esse post"
+          },
+          "save_post_form": {
+            "title": "Enviar artigo 📧",
+            "subtitle": "Enviar artigo para seu email",
+            "submit": "Enviar",
+            "cancel": "Cancelar"
+          },
+          "use_save_post": {
+            "title_success": "Email enviado 📧",
+            "subtitle_success": "Email enviado com sucesso",
+            "title_error": "Error ao enviar artigo ❌",
+            "subtitle_error": "Aconteceu um erro ao enviar o artigo"
           }
         }
       },

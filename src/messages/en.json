@@ -40,6 +40,18 @@
             "description_error_like": "Already liked",
             "title_like": "Success 🚀",
             "description_like": "You liked the post"
+          },
+          "save_post_form": {
+            "title": "Send email 📧",
+            "subtitle": "Send post to email",
+            "submit": "Submit",
+            "cancel": "Cancel"
+          },
+          "use_save_post": {
+            "title_success": "email sent 📧",
+            "subtitle_success": "email sent successfully",
+            "title_error": "error sending email ❌",
+            "subtitle_error": "an error occurred while submitting the post"
           }
         }
       },
