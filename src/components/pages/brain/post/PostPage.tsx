@@ -9,9 +9,7 @@ import SavePostForm from './SavePostForm';
 import { useNewLike } from './use-new-like';
 import { usePost } from './use-post';
 
-type PostPageProps = {
-  postId: string;
-};
+type PostPageProps = { postId: string };
 
 const PostPage = ({ postId }: PostPageProps) => {
   const t = useTranslations('components.pages.brain.post.post_page');
@@ -28,7 +26,7 @@ const PostPage = ({ postId }: PostPageProps) => {
       if (document) {
         const isDark = theme.mode === 'dark';
 
-        const bgColor = isDark ? '#000000' : '#ffffff';
+        const bgColor = isDark ? '#030712' : '#ffffff';
         const textColor = isDark ? '#ffffff' : '#000000';
         const linkColor = isDark ? '#90cdf4' : '#1a73e8';
 
