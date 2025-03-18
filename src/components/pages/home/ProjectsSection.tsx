@@ -87,11 +87,7 @@ function ProjectsSection() {
                     onMouseLeave={() => setHoveredIcon(null)}
                     initial={{ y: 0 }}
                     animate={hoveredIcon === `${tech}_${index}` ? { y: [0, -10, 0] } : { y: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      repeat: hoveredIcon === `${tech}_${index}` ? Infinity : 0,
-                      repeatType: 'loop',
-                    }}
+                    transition={{ duration: 0.6, repeat: hoveredIcon === `${tech}_${index}` ? Infinity : 0, repeatType: 'loop' }}
                   >
                     <Image
                       src={`/technologies/${imgSrc}`}

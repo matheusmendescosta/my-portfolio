@@ -1,5 +1,6 @@
 'use client';
 
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -12,10 +13,7 @@ const experiences = [
     img: '/experiences/evotalks.jpg',
     url: 'https://www.evotalks.com.br/',
     role: '',
-    technologies: {
-      javascript: 'javascript.png',
-      api: 'apirest.png',
-    },
+    technologies: { javascript: 'javascript.png', api: 'apirest.png' },
     date: '',
     description: '',
   },
@@ -97,7 +95,7 @@ function WorkExperienceSection() {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
 
   return (
-    <section>
+    <section className="">
       <h2 className="mb-4 text-lg font-bold dark:text-gray-200">{t('title')}</h2>
       <div>
         {experiences.map((experience, index) => (
@@ -119,7 +117,18 @@ function WorkExperienceSection() {
                 <ArrowUpRight />
               </a>
               <p className="text-sm dark:text-gray-400">{t(`experiences.${index}.date`)}</p>
-              <p className="text-sm dark:text-gray-500">{t(`experiences.${index}.description`)}</p>
+              <div className="text-sm dark:text-gray-500">
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>
+                      <span>
+                        {t('description_position')} {t(`experiences.${index}.company`)}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent>{t(`experiences.${index}.description`)}</AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
               <div className="mt-2 flex flex-wrap gap-2">
                 {Object.entries(experience.technologies).map(([tech, imgSrc]) => (
                   <motion.div
@@ -128,11 +137,7 @@ function WorkExperienceSection() {
                     onMouseLeave={() => setHoveredIcon(null)}
                     initial={{ y: 0 }}
                     animate={hoveredIcon === `${tech}_${index}` ? { y: [0, -10, 0] } : { y: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      repeat: hoveredIcon === `${tech}_${index}` ? Infinity : 0,
-                      repeatType: 'loop',
-                    }}
+                    transition={{ duration: 0.6, repeat: hoveredIcon === `${tech}_${index}` ? Infinity : 0, repeatType: 'loop' }}
                   >
                     <Image
                       src={`/technologies/${imgSrc}`}

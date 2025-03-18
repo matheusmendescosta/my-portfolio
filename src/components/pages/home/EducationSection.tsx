@@ -6,22 +6,8 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const Education = [
-  {
-    school: '',
-    img: '/education/logoMeta.jpg',
-    url: 'https://faculdade.meta.edu.br/',
-    course: '',
-    date: '',
-    description: '',
-  },
-  {
-    school: '',
-    img: '/education/LogoXP.jpg',
-    url: 'https://www.xpeducacao.com.br/',
-    course: '',
-    date: '',
-    description: '',
-  },
+  { school: '', img: '/education/logoMeta.jpg', url: 'https://faculdade.meta.edu.br/', course: '', date: '', description: '' },
+  { school: '', img: '/education/LogoXP.jpg', url: 'https://www.xpeducacao.com.br/', course: '', date: '', description: '' },
 ];
 
 function EducationSection() {

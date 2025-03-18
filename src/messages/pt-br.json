@@ -6,14 +6,8 @@
           "title": "Meu cérebro 🧠",
           "subtitle": "Minha jornada na tecnologia, registrada em tutoriais e anotações para mim (e para quem mais quiser aprender)"
         },
-        "posts_section": {
-          "create_at": "Criado em",
-          "update_at": "Atualizado em",
-          "by": "por"
-        },
-        "posts_page": {
-          "no_posts": "Nenhum post disponível."
-        },
+        "posts_section": { "create_at": "Criado em", "update_at": "Atualizado em", "by": "por" },
+        "posts_page": { "no_posts": "Nenhum post disponível." },
         "post": {
           "post_page": {
             "slug": "Identificador",
@@ -60,10 +54,7 @@
           "title": "Sobre mim",
           "description": "Engenheiro de Computação com MBA em Desenvolvimento Full Stack, com sólida experiência em desenvolvimento Front-End e Back-End. Especialista em criar soluções eficientes e escaláveis, aplicando boas práticas de desenvolvimento e focando em alta performance e qualidade de código."
         },
-        "header_section": {
-          "name": "Matheus Mendes",
-          "occupation": "Desenvolvedor Fullstack Pleno"
-        },
+        "header_section": { "name": "Matheus Mendes", "occupation": "Desenvolvedor Fullstack Pleno" },
         "home_section": {},
         "projects_section": {
           "title": "Projetos paralelos",
@@ -79,6 +70,7 @@
         },
         "work_experience_section": {
           "title": "Experiência profissional",
+          "description_position": "Resumo da minha trajetória profissional na empresa",
           "experiences": [
             {
               "company": "EvoTalks",
@@ -150,23 +142,9 @@
       }
     },
     "ui": {
-      "footer": {
-        "create_by": "Criado por Matheus Mendes 🗿",
-        "github": "GitHub",
-        "linkedin": "LinkedIn"
-      },
-      "navbar": {
-        "navItems": {
-          "home": "Inicio",
-          "brain": "cérebro"
-        }
-      },
-      "locale_switcher": {
-        "options": {
-          "en": "Inglês",
-          "pt-br": "Português"
-        }
-      }
+      "footer": { "create_by": "Criado por Matheus Mendes 🗿", "github": "GitHub", "linkedin": "LinkedIn" },
+      "navbar": { "navItems": { "home": "Inicio", "brain": "Cérebro" } },
+      "locale_switcher": { "options": { "en": "Inglês", "pt-br": "Português" } }
     }
   }
 }

@@ -11,29 +11,17 @@ import CustomDocument from './CustomDocument';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  icons: {
-    icon: '/images/profile.png',
-  },
+  icons: { icon: '/images/profile.png' },
   title: 'Portfolio - Matheus Mendes',
   description: 'Portfolio of Matheus Mendes, a software developer based in Brazil.',
 };
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const locale = await getLocale();
 
   const messages = await getMessages();
@@ -41,7 +29,7 @@ export default async function RootLayout({
   return (
     <ThemeProvider>
       <CustomDocument locale={locale}>
-        <body className={twJoin(`${geistSans.variable} ${geistMono.variable} dark:bg-black dark:text-white`)}>
+        <body className={twJoin(`${geistSans.variable} ${geistMono.variable}`)}>
           <NextIntlClientProvider messages={messages}>
             <Navbar />
             <Toaster />
