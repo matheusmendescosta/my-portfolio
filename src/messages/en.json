@@ -6,14 +6,8 @@
           "title": "My brain 🧠",
           "subtitle": "My journey into technology, recorded in tutorials and notes for myself (and anyone else who wants to learn)"
         },
-        "posts_section": {
-          "create_at": "Create at",
-          "update_at": "Update at",
-          "by": "by"
-        },
-        "posts_page": {
-          "no_posts": "No posts available."
-        },
+        "posts_section": { "create_at": "Create at", "update_at": "Update at", "by": "by" },
+        "posts_page": { "no_posts": "No posts available." },
         "post": {
           "post_page": {
             "slug": "Slug",
@@ -41,12 +35,7 @@
             "title_like": "Success 🚀",
             "description_like": "You liked the post"
           },
-          "save_post_form": {
-            "title": "Send email 📧",
-            "subtitle": "Send post to email",
-            "submit": "Submit",
-            "cancel": "Cancel"
-          },
+          "save_post_form": { "title": "Send email 📧", "subtitle": "Send post to email", "submit": "Submit", "cancel": "Cancel" },
           "use_save_post": {
             "title_success": "email sent 📧",
             "subtitle_success": "email sent successfully",
@@ -60,10 +49,7 @@
           "title": "About me",
           "description": "Computer Engineer with an MBA in Full Stack Development, experienced in both Front-End and Back-End development. Skilled in delivering efficient and scalable solutions, focusing on high performance and code quality through best development practices."
         },
-        "header_section": {
-          "name": "Matheus Mendes",
-          "occupation": "Mid Level Full Stack Developer"
-        },
+        "header_section": { "name": "Matheus Mendes", "occupation": "Mid Level Full Stack Developer" },
         "home_section": {},
         "projects_section": {
           "title": "Side Projects",
@@ -79,6 +65,7 @@
         },
         "work_experience_section": {
           "title": "Work experience",
+          "description_position": "Summary of my professional experience in the company",
           "experiences": [
             {
               "company": "EvoTalks",
@@ -150,23 +137,9 @@
       }
     },
     "ui": {
-      "footer": {
-        "create_by": "By Matheus Mendes 🗿",
-        "github": "GitHub",
-        "linkedin": "LinkedIn"
-      },
-      "navbar": {
-        "navItems": {
-          "home": "Home",
-          "brain": "brain"
-        }
-      },
-      "locale_switcher": {
-        "options": {
-          "en": "English",
-          "pt-br": "Portuguese"
-        }
-      }
+      "footer": { "create_by": "By Matheus Mendes 🗿", "github": "GitHub", "linkedin": "LinkedIn" },
+      "navbar": { "navItems": { "home": "Home", "brain": "Brain" } },
+      "locale_switcher": { "options": { "en": "English", "pt-br": "Portuguese" } }
     }
   }
 }
