@@ -74,33 +74,33 @@
           "experiences": [
             {
               "company": "EvoTalks",
-              "role": "Desenvolvedor de Integração",
+              "role": "Desenvolvedor Fullstack",
               "date": "nov de 2024 - o momento",
-              "description": "Desenvolvendo integrações entre sistemas sistemas usando javascript"
+              "description": "Refatoração com SOLID e Clean Code, gestão de ambientes, deploy automatizado, integração com pagamentos seguros e autenticação via OAuth, JWT e RBAC."
             },
             {
               "company": "RBR Digital",
               "role": "Desenvolvedor Fullstack",
               "date": "jun de 2024 - ago de 2024 · 3 meses",
-              "description": "Revolução na saúde dos estados unidos"
+              "description": "Desenvolvimento full stack com microservices, Kafka, monorepo com TurboRepo, testes automatizados e Storybook para padronização e eficiência no fluxo de trabalho."
             },
             {
               "company": "OrçaFacio",
               "role": "Desenvolvedor Fullstack",
               "date": "out de 2023 - mai de 2024 · 8 meses",
-              "description": "Tecnologia mais usada em obras públicas no Brasil"
+              "description": "Desenvolvimento com TypeScript, Next.js e TailwindCSS, autenticação segura com NextAuth e automação de deploy via CI/CD com GitHub Actions para eficiência."
             },
             {
               "company": "TNP",
               "role": "Desenvolvedor Frontend",
               "date": "jul de 2023 - out de 2023 · 4 meses",
-              "description": "Solução de pagamento colaborativo inovador"
+              "description": "Liderança de equipe, definição de tecnologias, controle de versões com Git Flow e testes unitários para garantir qualidade, escalabilidade e colaboração eficiente."
             },
             {
               "company": "Prosas",
               "role": "Desenvolvedor Frontend",
               "date": "mar de 2022 - fev de 2023 · 1 ano",
-              "description": "Tecnologia a serviço do impacto social"
+              "description": "Correção de bugs, monitoramento com New Relic, desenvolvimento escalável, code review e participação em sprints para otimizar entregas e experiência do usuário."
             }
           ]
         },

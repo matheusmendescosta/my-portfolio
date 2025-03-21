@@ -69,33 +69,33 @@
           "experiences": [
             {
               "company": "EvoTalks",
-              "role": "Integration Developer",
+              "role": "Fullstack Developer",
               "date": "nov 2024 - present",
-              "description": "Developing integrations between systems using javascript and api rest"
+              "description": "Refactoring with SOLID and Clean Code, environment management, automated deployment, integration with secure payments and authentication via OAuth, JWT and RBAC."
             },
             {
               "company": "RBR Digital",
               "role": "Fullstack Developer",
               "date": "jun 2024 - aug 2024 · 3 months",
-              "description": "Revolution in US healthcare"
+              "description": "Full stack development with microservices, Kafka, monorepo with TurboRepo, automated tests and Storybook for standardization and efficiency in the workflow."
             },
             {
               "company": "OrçaFacio",
               "role": "FullStack Developer",
               "date": "oct 2023 - may 2024 · 8 months",
-              "description": "The most used technology in public works in Brazil"
+              "description": "Development with TypeScript, Next.js and TailwindCSS, secure authentication with NextAuth and deployment automation via CI/CD with GitHub Actions for efficiency."
             },
             {
               "company": "TNP",
               "role": "Frontend Developer",
               "date": "jul 2023 - oct 2023 · 4 months",
-              "description": "Innovative collaborative payment solution"
+              "description": "Team leadership, technology definition, version control with Git Flow and unit testing to ensure quality, scalability and efficient collaboration."
             },
             {
               "company": "Prosas",
               "role": "Frontend Developer",
               "date": "mar 2022 - feb 2023 · 1 year",
-              "description": "Technology at the service of social impact."
+              "description": "Bug fixing, monitoring with New Relic, scalable development, code review and participation in sprints to optimize deliveries and user experience."
             }
           ]
         },
