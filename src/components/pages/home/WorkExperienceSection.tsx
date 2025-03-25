@@ -137,6 +137,7 @@ function WorkExperienceSection() {
                   </AccordionItem>
                 </Accordion>
               </div>
+              <p className="dark:text-slate-300">{t('technology_stack')}</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {Object.entries(experience.technologies).map(([tech, imgSrc]) => (
                   <motion.div
