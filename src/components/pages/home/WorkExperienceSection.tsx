@@ -13,7 +13,14 @@ const experiences = [
     img: '/experiences/evotalks.jpg',
     url: 'https://www.evotalks.com.br/',
     role: '',
-    technologies: { javascript: 'javascript.png', api: 'apirest.png' },
+    technologies: {
+      typescript: 'typescript.png',
+      github: 'octacat.png',
+      react: 'reactjs.png',
+      next: 'nextjs.png',
+      tailwind: 'tailwindcss.png',
+      postgresql: 'postgresql.png',
+    },
     date: '',
     description: '',
   },
@@ -46,6 +53,7 @@ const experiences = [
       ruby: 'ruby.png',
       typescript: 'typescript.png',
       mongo: 'mongo.png',
+      postgresql: 'postgresql.png',
       docker: 'docker.png',
       rabbitmq: 'rabbitmq.jpg',
       github: 'octacat.png',
@@ -129,6 +137,7 @@ function WorkExperienceSection() {
                   </AccordionItem>
                 </Accordion>
               </div>
+              <p className="dark:text-slate-300">{t('technology_stack')}</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {Object.entries(experience.technologies).map(([tech, imgSrc]) => (
                   <motion.div

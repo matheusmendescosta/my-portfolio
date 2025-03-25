@@ -71,6 +71,7 @@
         "work_experience_section": {
           "title": "Experiência profissional",
           "description_position": "Resumo da minha trajetória profissional na empresa",
+          "technology_stack": "Tecnologias utilizadas",
           "experiences": [
             {
               "company": "EvoTalks",
