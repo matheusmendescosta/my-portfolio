@@ -1,5 +1,6 @@
 import Footer from '@/components/ui/Footer';
 import { Navbar } from '@/components/ui/Navbar';
+import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/contexts/ThemeProvider';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
@@ -9,7 +10,6 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 import CustomDocument from './CustomDocument';
 import './globals.css';
-import { Toaster } from '@/components/ui/toaster';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 
