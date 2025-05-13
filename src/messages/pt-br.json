@@ -46,6 +46,20 @@
             "subtitle_success": "Email enviado com sucesso",
             "title_error": "Error ao enviar artigo ❌",
             "subtitle_error": "Aconteceu um erro ao enviar o artigo"
+          },
+          "send_post_wa_form": {
+            "title": "Enviar artigo via WhatsApp 📱",
+            "subtitle": "Enviar artigo para seu WhatsApp",
+            "name": "Nome",
+            "phone": "Telefone",
+            "submit": "Enviar",
+            "cancel": "Cancelar"
+          },
+          "use_send_post_wa": {
+            "title_success": "Artigo enviado via WhatsApp 📱",
+            "subtitle_success": "Artigo enviado com sucesso via WhatsApp",
+            "title_error": "Error ao enviar artigo via WhatsApp ❌",
+            "subtitle_error": "Aconteceu um erro ao enviar o artigo via WhatsApp"
           }
         }
       },

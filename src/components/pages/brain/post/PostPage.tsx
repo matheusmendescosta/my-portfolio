@@ -8,6 +8,7 @@ import CommentForm from './CommentForm';
 import SavePostForm from './SavePostForm';
 import { useNewLike } from './use-new-like';
 import { usePost } from './use-post';
+import SendPostWaForm from './SendPostWaForm';
 
 type PostPageProps = { postId: string };
 
@@ -130,6 +131,7 @@ const PostPage = ({ postId }: PostPageProps) => {
             <p className="ml-2">{post._count.likes}</p>
           </div>
           <SavePostForm postId={post.id} />
+          <SendPostWaForm postId={post.id} />
         </div>
         <div className="mt-4 rounded-md p-2">
           {post.comments.length > 0 ? (
