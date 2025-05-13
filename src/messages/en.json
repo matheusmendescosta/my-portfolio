@@ -41,6 +41,20 @@
             "subtitle_success": "email sent successfully",
             "title_error": "error sending email ❌",
             "subtitle_error": "an error occurred while submitting the post"
+          },
+          "send_post_wa_form": {
+            "title": "Send white whatsApp 📱",
+            "subtitle": "Send post whit WhatsApp",
+            "name": "Name",
+            "phone": "Phone",
+            "submit": "Submit",
+            "cancel": "Cancel"
+          },
+          "use_send_post_wa": {
+            "title_success": "Post send whatsApp 📱",
+            "subtitle_success": "Post sent successfully via WhatsApp",
+            "title_error": "Error to send post via whatsApp ❌",
+            "subtitle_error": "an error occurred while submitting the post"
           }
         }
       },
