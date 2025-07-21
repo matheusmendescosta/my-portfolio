@@ -13,6 +13,7 @@ type FormProps = {
 };
 
 export const useNewComment = ({ postId, content, parentCommentId, setContent, refetch }: FormProps) => {
+  const [isAITyping, setIsAITyping] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const t = useTranslations('components.pages.brain.post.use_new_comment');
@@ -42,7 +43,16 @@ export const useNewComment = ({ postId, content, parentCommentId, setContent, re
           variant: 'default',
         });
         setContent('');
+
         refetch();
+
+        setIsAITyping(true);
+
+        setTimeout(async () => {
+          await refetch();
+
+          setIsAITyping(false);
+        }, 10000);
       }
     } catch (error) {
       console.error(error);
@@ -51,5 +61,5 @@ export const useNewComment = ({ postId, content, parentCommentId, setContent, re
     }
   };
 
-  return { isSubmitting, handlerSubmitComment };
+  return { isSubmitting, handlerSubmitComment, isAITyping };
 };
