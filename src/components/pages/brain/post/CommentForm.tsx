@@ -14,10 +14,11 @@ type CommentFromProps = {
 
 const CommentForm = ({ label, placeholder, submit, postId, parentCommentId, refetch }: CommentFromProps) => {
   const [content, setContent] = useState('');
-  const { handlerSubmitComment, isSubmitting } = useNewComment({ postId, content, parentCommentId, setContent, refetch });
+  const { handlerSubmitComment, isSubmitting, isAITyping } = useNewComment({ postId, content, parentCommentId, setContent, refetch });
 
   return (
     <form className="mx-auto mt-2 w-full" onSubmit={(e) => handlerSubmitComment(e)}>
+      {isAITyping && <div className="ml-2 mt-1 animate-pulse text-sm text-gray-500">IA está digitando...</div>}
       <div className="mb-1">
         <label className="mb-2 block text-sm font-bold text-gray-700" htmlFor="comment">
           {label}
