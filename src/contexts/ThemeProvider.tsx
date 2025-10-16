@@ -24,7 +24,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const theme = localStorage.getItem('theme');
 
-    setMode(theme ?? 'light');
+    setMode(theme ?? 'dark');
   }, [mode]);
 
   return <ThemeContext.Provider value={{ mode, toggleMode }}>{children}</ThemeContext.Provider>;
