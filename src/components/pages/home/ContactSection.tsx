@@ -113,14 +113,14 @@ const ContactSection = () => {
           </form>
         </DrawerContent>
       </Drawer>
-      <Link
+      {/* <Link
         href="https://brain.matheusmendes.fun"
         target="_blank"
         rel="noopener noreferrer"
         className="transition-transform hover:scale-150 hover:text-black dark:hover:text-gray-200"
       >
         <Brain size={20} />
-      </Link>
+      </Link> */}
     </div>
   );
 };

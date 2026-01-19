@@ -6,7 +6,6 @@ import DarkMode from './DarkMode';
 
 const navItems = [
   { path: '/', name: 'home' },
-  { path: '/brain', name: 'brain' },
 ];
 
 const tutorialSteps = [
