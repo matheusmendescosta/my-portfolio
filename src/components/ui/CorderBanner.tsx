@@ -11,7 +11,7 @@ const CornerBanner = () => {
         )}
         style={{ transformOrigin: 'top right' }}
       >
-        🏖️ On Vacation
+        👨🏼‍💻 Open to Work
       </div>
     </div>
   );
