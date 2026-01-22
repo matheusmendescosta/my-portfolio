@@ -1,3 +1,4 @@
+/* eslint-disable no-inline-comments */
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://matheusmendes.dev';
 
@@ -7,11 +8,13 @@ export async function GET() {
 
 ## Sobre
 
-Este é o portfólio profissional de Matheus Mendes, um desenvolvedor de software fullstack com experiência em diversas tecnologias modernas.
+Este é o portfólio profissional de Matheus Mendes, um desenvolvedor de software fullstack com experiência em diversas
+ tecnologias modernas.
 
 ## Páginas
 
-- [Home](${baseUrl}/): Página principal com informações sobre o desenvolvedor, experiências profissionais, projetos e educação.
+- [Home](${baseUrl}/): Página principal com informações sobre o desenvolvedor, experiências profissionais, 
+projetos e educação.
 - [Brain](${baseUrl}/brain): Blog com posts e artigos sobre tecnologia e desenvolvimento.
 
 ## Seções da Home
