@@ -10,7 +10,7 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import { Turnstile } from '@marsidev/react-turnstile';
-import { Brain, Github, Linkedin, Mail } from 'lucide-react';
+import { Brain, Github, Linkedin, Mail, Swords } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { twJoin } from 'tailwind-merge';
@@ -37,6 +37,13 @@ const ContactSection = () => {
         className="transition-transform hover:scale-150 hover:text-black dark:hover:text-gray-200"
       >
         <Linkedin size={20} />
+      </Link>
+
+      <Link
+        href="/mydota"
+        className="transition-transform hover:scale-150 hover:text-black dark:hover:text-gray-200"
+      >
+        <Swords size={20} />
       </Link>
       <Drawer open={isOpen} onOpenChange={setIsOpen}>
         <DrawerTrigger asChild>

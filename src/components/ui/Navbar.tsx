@@ -6,6 +6,7 @@ import DarkMode from './DarkMode';
 
 const navItems = [
   { path: '/', name: 'home' },
+  { path: '/mydota', name: 'mydota' },
 ];
 
 const tutorialSteps = [
