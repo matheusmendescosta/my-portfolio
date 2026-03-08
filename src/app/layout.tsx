@@ -6,14 +6,12 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 import CustomDocument from './CustomDocument';
 import './globals.css';
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
-
-const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
+const roboto = Roboto({ variable: '--font-roboto', subsets: ['latin'], weight: ['400', '500', '700'] });
 
 export const metadata: Metadata = {
   icons: { icon: '/images/profile.png' },
@@ -29,7 +27,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <ThemeProvider>
       <CustomDocument locale={locale}>
-        <body className={twJoin(`${geistSans.variable} ${geistMono.variable}`)}>
+        <body className={twJoin(roboto.variable)}>
           <NextIntlClientProvider messages={messages}>
             <Navbar />
             <Toaster />

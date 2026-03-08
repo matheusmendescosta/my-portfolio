@@ -153,7 +153,7 @@
     },
     "ui": {
       "footer": { "create_by": "By Matheus Mendes 🗿", "github": "GitHub", "linkedin": "LinkedIn" },
-      "navbar": { "navItems": { "home": "Home", "brain": "Brain" } },
+      "navbar": { "navItems": { "home": "Home", "brain": "Brain", "mydota": "My Dota" } },
       "locale_switcher": { "options": { "en": "English", "pt-br": "Portuguese" } }
     }
   }
